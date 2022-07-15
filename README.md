@@ -1,5 +1,7 @@
 # Getflix
 
+![image](https://giphy.com/gifs/patriotact-netflix-hasan-minhaj-patriot-act-ggtpYV17RP9lTbc542)
+
 ## Qui a participé au projet ?
 
 Nous sommes trois à travailler sur ce projet : ***Thérèse, Quentin, Clément***.  
