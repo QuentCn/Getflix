@@ -1,6 +1,6 @@
 # Getflix
 
-![image](https://giphy.com/gifs/patriotact-netflix-hasan-minhaj-patriot-act-ggtpYV17RP9lTbc542)
+![image](https://giphy.com/embed/ggtpYV17RP9lTbc542)
 
 ## Qui a participé au projet ?
 
