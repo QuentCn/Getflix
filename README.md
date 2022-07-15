@@ -1,6 +1,6 @@
 # Getflix
 
-![alt-text](https://giphy.com/embed/ggtpYV17RP9lTbc542/giphy.gif)
+![alt-text](https://media4.giphy.com/media/ggtpYV17RP9lTbc542/giphy.gif?cid=ecf05e47e96ou08y92qw46refkb7n9zj54e9b3xpft4wgx9h&rid=giphy.gif&ct=g)
 
 ## Qui a participé au projet ?
 
