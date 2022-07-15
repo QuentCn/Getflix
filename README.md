@@ -4,7 +4,7 @@
 
 ## Qui a participé au projet ?
 
-Nous sommes trois à travailler sur ce projet : ***Thérèse, Quentin, Clément***.  
+Nous sommes trois à travailler sur ce projet : ***[Thérèse](https://github.com/TT4927), [Quentin](https://github.com/QuentCn), [Clément](https://github.com/Clement-Leger)***.  
 Chacun d'entre nous apporte sa pierre à l'édifice que ce soit pour du Front-end ou du Back-end.
 
 <img src="https://media1.giphy.com/media/4yxNXqilaJIkr3sHxx/giphy.gif?cid=ecf05e47njk3u4giyeab4463bwpcr49irbnmisydekajhy39&rid=giphy.gif&ct=g" width="300px" />
