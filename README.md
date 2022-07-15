@@ -7,7 +7,7 @@
 Nous sommes trois à travailler sur ce projet : ***Thérèse, Quentin, Clément***.  
 Chacun d'entre nous apporte sa pierre à l'édifice que ce soit pour du Front-end ou du Back-end.
 
-<img src="https://media1.giphy.com/media/4yxNXqilaJIkr3sHxx/giphy.gif?cid=ecf05e47njk3u4giyeab4463bwpcr49irbnmisydekajhy39&rid=giphy.gif&ct=g" width="250px" />
+<img src="https://media1.giphy.com/media/4yxNXqilaJIkr3sHxx/giphy.gif?cid=ecf05e47njk3u4giyeab4463bwpcr49irbnmisydekajhy39&rid=giphy.gif&ct=g" width="300px" />
 
 ## Le projet
 
@@ -43,4 +43,4 @@ Pour organiser notre travail nous nous sommes servis de Trello.
 
 ## Merci de nous avoir lu !
 
-<img src="https://media1.giphy.com/media/AUX0vZuQh95alzDUSN/giphy.gif?cid=ecf05e47oyc0r16q6pq3u7zn0zd3or9bthelzy3a5by5b4ko&rid=giphy.gif&ct=g" witdh="250px" />
+<img src="https://media1.giphy.com/media/AUX0vZuQh95alzDUSN/giphy.gif?cid=ecf05e47oyc0r16q6pq3u7zn0zd3or9bthelzy3a5by5b4ko&rid=giphy.gif&ct=g" />
