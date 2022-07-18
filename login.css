@@ -1,0 +1,60 @@
+body{
+    background-color: grey;
+    color : white;
+}
+
+h1{
+    font-size: 25px;
+    text-decoration: underline;
+    position: relative;
+    top: 15px;
+}
+
+.login{
+    margin :auto;
+    background-color: rgba(170, 16, 16, 0.4);
+    height : 300px;
+    width : 300px;
+    position: relative;
+    top: 100px;
+    text-align: center;
+
+}
+
+.input-name{
+    position: relative;
+    text-align: center;
+    top: 25px;
+    width: 150px;
+    height: 30px;
+    background-color: rgba(88, 81, 81, 0.3);
+    color: white;
+}
+
+.input-password{
+    position: relative;
+    top: 40px;
+    text-align: center;
+    margin-left: auto;
+    width: 150px;
+    height: 30px;
+    background-color: rgba(88, 81, 81, 0.3);
+    color: white;
+}
+
+.sign-in{
+    position: relative;
+    top: 75px;
+    width: 150px;
+    height: 35px;
+    background-color: rgba(170, 16, 16, 0.3);
+    border-radius: 5px;
+    border: solid 2px black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.sign-in:hover{
+    background-color: rgb(202, 0, 0);
+    color: white;
+}

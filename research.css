@@ -1,0 +1,28 @@
+body{
+    background-color: grey;
+    color : white;
+}
+
+.input-search{
+    border-color: red;
+    border-radius: 5px;
+    text-align: center ;
+    width: 250px;
+    height: 40px;
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+#form-search{
+    text-align: center;
+    background-color: black;
+    height: 100px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td, th{
+    border: solid black 1px;
+}
