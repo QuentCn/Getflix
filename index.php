@@ -27,7 +27,7 @@ if (isset($_POST['login'])){
         $passwordWrote = htmlspecialchars($_POST['loginPassword']);
         if($pseudoWrote == $pseudo AND $passwordWrote == $password){
             $_SESSION['administrateur'] = $password;
-            header('Location: admin.php');
+            header('Location: administration/admin.php');
          } 
      };
 }
