@@ -2,7 +2,7 @@
 session_start();
 $db = new PDO('mysql:host=database;
 dbname=Getflix;',
- 'root',
+  'root',
   'root');
  if(!$_SESSION['administrateur']){
     header('Location: login.php');
@@ -31,12 +31,12 @@ $email = $_POST["email"];
 $donnéesFormulaire = $db->prepare('SELECT * FROM subscribe_users');
 
 //On va tout récupérer
-
 $donnéesFormulaire->execute();
 $donnéesFetch = $donnéesFormulaire->fetchAll();
 $id = $_POST["user_id"];
 
-$sqlQuery = 'INSERT INTO users(fullname, email) VALUES (:fullname, :email)';
+// On initialise l'insertion depuis notre base de données
+$sqlQuery = 'INSERT INTO subscribe_users(fullname, email) VALUES (:fullname, :email)';
 
 // Préparation
 $insertText = $db->prepare($sqlQuery);
@@ -52,7 +52,7 @@ $insertText->execute([
 <table>
 <tr>
         <th>Id</th>
-        <th>Firstname</th>
+        <th>fullname</th>
         <th>Email</th>
         <th>Editer</th>
         <th>Supprimer</th>
