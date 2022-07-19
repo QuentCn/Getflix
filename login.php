@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$db = new PDO('mysql:host=database;
-dbname=Getflix;charset=utf8;',
- 'root',
- 'root');
+$db = new PDO('mysql:host=sql11.freesqldatabase.com;
+dbname=sql11507471;charset=utf8;',
+ 'sql11507471',
+ 'At17mKASTq');
 
 if(isset($_POST['login'])){
     if(empty($_POST["fullname"]) 
@@ -44,7 +44,7 @@ $password = sha1($_POST["password"]);
 $fullname = htmlspecialchars($_POST["fullname"]);
 
 //On va chercher les données dans la database
-$dataform = $db->prepare('SELECT * FROM subscribe_users WHERE fullname = ? AND password = ?');
+$dataform = $db->prepare('SELECT * FROM users WHERE fullname = ? AND password = ?');
         
 $dataform->execute(array($fullname, $password));
 //Si les conditions sont remplies la connexion se fait

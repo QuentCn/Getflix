@@ -1,14 +1,14 @@
 <?php session_start();
-$db = new PDO('mysql:host=database;
-               dbname=Getflix;',
-               'root',
-               'root'); 
+$db = new PDO('mysql:host=sql11.freesqldatabase.com;
+dbname=sql11507471;charset=utf8;',
+ 'sql11507471',
+ 'At17mKASTq');
 
-$getUser = $db->query('SELECT * FROM subscribe_users ORDER BY user_id DESC');
+$getUser = $db->query('SELECT * FROM users ORDER BY user_id DESC');
                
 if(isset($_GET['keyword']) AND !empty($_GET['keyword'])){
     $search = htmlspecialchars($_GET['keyword']);
-    $getUser = $db->query('SELECT fullname FROM subscribe_users WHERE fullname LIKE "%'.$search.'%" ORDER BY user_id DESC');
+    $getUser = $db->query('SELECT fullname FROM users WHERE fullname LIKE "%'.$search.'%" ORDER BY user_id DESC');
 }?>
 
 <!DOCTYPE html>

@@ -1,9 +1,9 @@
 <?php
 session_start();
-$db = new PDO('mysql:host=database;
-dbname=Getflix;',
-  'root',
-  'root');
+$db = new PDO('mysql:host=sql11.freesqldatabase.com;
+dbname=sql11507471;charset=utf8;',
+ 'sql11507471',
+ 'At17mKASTq');
  if(!$_SESSION['administrateur']){
     header('Location: login.php');
     }?>
@@ -28,7 +28,7 @@ $fullname = $_POST["fullname"];
 $email = $_POST["email"];
 
 //On va selectionner le tout ("*") dans le table users
-$donnéesFormulaire = $db->prepare('SELECT * FROM subscribe_users');
+$donnéesFormulaire = $db->prepare('SELECT * FROM users');
 
 //On va tout récupérer
 $donnéesFormulaire->execute();
@@ -36,7 +36,7 @@ $donnéesFetch = $donnéesFormulaire->fetchAll();
 $id = $_POST["user_id"];
 
 // On initialise l'insertion depuis notre base de données
-$sqlQuery = 'INSERT INTO subscribe_users(fullname, email) VALUES (:fullname, :email)';
+$sqlQuery = 'INSERT INTO users(fullname, email) VALUES (:fullname, :email)';
 
 // Préparation
 $insertText = $db->prepare($sqlQuery);

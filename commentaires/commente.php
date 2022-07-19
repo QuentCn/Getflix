@@ -1,9 +1,9 @@
 <?php
 session_start();
-$db = new PDO('mysql:host=database;
-dbname=Getflix;',
- 'root',
-  'root');
+$db = new PDO('mysql:host=sql11.freesqldatabase.com;
+dbname=sql11507471;charset=utf8;',
+ 'sql11507471',
+ 'At17mKASTq');
 
 if($_SESSION['fullname']){
  echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['user_id'] . ' est bien connecté';
@@ -28,8 +28,8 @@ if($_SESSION['fullname']){
               $comment = $_POST['comment'];
               
                //On va selectionner le tout ("*") dans le table users
-              $dataform = $db->prepare('SELECT * FROM subscribe_users');
-              $dataCom = $db->prepare('SELECT * FROM commentaires');
+              $dataform = $db->prepare('SELECT * FROM users');
+              $dataCom = $db->prepare('SELECT * FROM comments');
           
                //On va tout récupérer
               
@@ -40,7 +40,7 @@ if($_SESSION['fullname']){
               $dataFetch = $dataform->fetchAll();
               $id = $_POST["user_id"];
           
-              $sqlQuery = 'INSERT INTO commentaires(user_id, fullname, email, comment) VALUES (:user_id, :fullname, :email, :comment)';
+              $sqlQuery = 'INSERT INTO comments(user_id, fullname, email, comment) VALUES (:user_id, :fullname, :email, :comment)';
               
               // Préparation
               $insertData = $db->prepare($sqlQuery);
