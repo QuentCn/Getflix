@@ -15,12 +15,18 @@
 
 <!-- Barre de navigation (quent) -->
 
+
  <nav class="navbar bg-light fixed-top">
     <div class="container-fluid" id="nav">
       <a class="navbar-brand" id="title" href="testhome.html">Getflix</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" id="nav-button">
+      <form class="d-flex" role="search" id="serchbar">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
+      </form>
+      <button class="navbar-toggler btn btn-info btn-circle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" id="nav-button">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel"> Getflix</h5>
@@ -47,10 +53,6 @@
               </ul>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" id="nav-comp" type="submit">Rechercher</button>
-          </form>
         </div>
       </div>
     </div>

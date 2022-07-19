@@ -64,3 +64,12 @@ body{
     margin-right: auto;
     width: 50%;
 }
+
+#searchbar {
+   justify-content: center;
+}
+
+#search-btn {
+    background-color: #d0d0e4;
+}
+
