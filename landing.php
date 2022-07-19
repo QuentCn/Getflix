@@ -61,33 +61,35 @@
             </div>
         </div>
 
+        <!--tab content 2-->
+
         <div id="tab-2-content" class="tab-content-item">
             <div class="tab-2-content-top">
                 <p class="text-lg">Watch TV shows and movies anytime, anywhere - personalized for you.</p>
                 <a href="#" class="btn btn-lg">Watch Free For 30 Days</a>
             </div>
-        </div>
+        
             
-        <div class="tab-2-content-bottom">
-            <div>
-                <img src="./img/images-1.jpeg" alt=""/>
-                <p class="text-md">Watch on your TV</p>
-                <p class="text-dark">Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray, PlayStation and more.</p>  
-            </div>
+            <div class="tab-2-content-bottom">
+                <div>
+                    <img src="./img/images-1.jpeg" alt=""/>
+                    <p class="text-md">Watch on your TV</p>
+                    <p class="text-dark">Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray, PlayStation and more.</p>  
+                </div>
 
-            <div>
-                <img src="./img/images-2.jpeg" alt=""/>
-                <p class="text-md">Watch instantly or download for later</p>
-                <p class="tex-dark">Available on phone and tablet, wherever you go.</p>  
-            </div>
+                <div>
+                    <img src="./img/images-2.jpeg" alt=""/>
+                    <p class="text-md">Watch instantly or download for later</p>
+                    <p class="tex-dark">Available on phone and tablet, wherever you go.</p>  
+                </div>
 
-            <div>
-                <img src="./img/images-3.jpeg" alt=""/>
-                <p class="text-md">Use any computer</p>
-                <p class="tex-dark">Watch right on getflix.com</p>  
+                <div>
+                    <img src="./img/images-3.jpeg" alt=""/>
+                    <p class="text-md">Use any computer</p>
+                    <p class="tex-dark">Watch right on getflix.com</p>  
+                </div>
             </div>
         </div>
-
 
         <!--tab 3 ceontent -->
         <div id="tab-3-content" class="tab-content-item">
