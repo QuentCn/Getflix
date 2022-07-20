@@ -77,6 +77,7 @@ $commentID = $dataComId->fetch()['commentID'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="commentStyle.css">
     <title>Tests commentaires</title>
 </head>
 <body>
@@ -104,8 +105,8 @@ $commentID = $dataComId->fetch()['commentID'];
             <td><?php echo $dataFetchCom['email']; ?></td>
             <td><?php echo $dataFetchCom['comment']; ?></td>
             <?php if($_SESSION['administrateur']){echo
-            '<td><a href="updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit">Editer</a></td>
-            <td><a href="deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete">X</a></td>';
+            '<td><a href="updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit"><img class="icons" src="../asset/img/wrench.png" alt="clé à molette"></img></a></td>
+            <td><a href="deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete"><img class="icons" src="../asset/img/cross.png" alt="croix"></img></a></td>';
         };?>
 
             </tr>

@@ -18,6 +18,8 @@ dbname=sql11507471;charset=utf8;',
     <title>Administration</title>
 </head>
 <body>
+    <div class="header"></div>
+
    <h1>Bienvenue dans le panneau d'administration </h1>
 
 <?php 
@@ -65,7 +67,7 @@ foreach ($donnéesFetch as $donnéesFetch) {
 <td><?php echo $donnéesFetch['fullname']; ?></td>
 <td><?php echo $donnéesFetch['email']; ?></td>
 <!-- <td><a href="update.php?user_id=<?php// echo $donnéesFetch['user_id']?>" name="edit">Editer</a></td> -->
-<td><a href="deleteUser.php?user_id=<?php echo $donnéesFetch['user_id']?>" name="delete">X</a></td>
+<td><a href="deleteUser.php?user_id=<?php echo $donnéesFetch['user_id']?>" name="delete"><img class="icon" src="../asset/img/cross.png" alt="croix"></img></a></td>
 </tr>
 
 <?php
