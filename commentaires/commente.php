@@ -91,8 +91,9 @@ $commentID = $dataComId->fetch()['commentID'];
                     <th>fullname</th>
                     <th>Email</th>
                     <th>Comment</th>
-                    <th>Editer</th>
-                    <th>Supprimer</th>
+                    <?php if($_SESSION['administrateur']){echo "<th>Editer</th>
+                    <th>Supprimer</th>";
+                    };?>
             </tr> 
             <?php //on va afficher ce qu'on veut qui provient de table users
             foreach ($dataFetchCom as $dataFetchCom) {
@@ -102,8 +103,11 @@ $commentID = $dataComId->fetch()['commentID'];
             <td><?php echo $dataFetchCom['fullname']; ?></td>
             <td><?php echo $dataFetchCom['email']; ?></td>
             <td><?php echo $dataFetchCom['comment']; ?></td>
-            <td><a href="updateCom.php?commentID=<?php echo $dataFetchCom['commentID'];?>" name="edit">Editer</a></td>
-            <td><a href="deleteCom.php?commentID=<?php echo $dataFetchCom['commentID'];?>" name="delete">X</a></td>
+            <?php if($_SESSION['administrateur']){echo
+            '<td><a href="updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit">Editer</a></td>
+            <td><a href="deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete">X</a></td>';
+        };?>
+
             </tr>
 
             <?php
