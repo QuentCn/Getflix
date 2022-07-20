@@ -5,7 +5,7 @@ dbname=sql11507471;charset=utf8;',
  'sql11507471',
  'At17mKASTq');
  if(!$_SESSION['administrateur']){
-    header('Location: login.php');
+    header('Location: ../index.php');
     }?>
 
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ $insertText->execute([
         <th>Id</th>
         <th>fullname</th>
         <th>Email</th>
-        <th>Editer</th>
+        <!-- <th>Editer</th> -->
         <th>Supprimer</th>
   </tr>     
 <?php //on va afficher ce qu'on veut qui provient de table users
@@ -64,7 +64,7 @@ foreach ($donnéesFetch as $donnéesFetch) {
 <td><?php echo $donnéesFetch['user_id']; ?></td>
 <td><?php echo $donnéesFetch['fullname']; ?></td>
 <td><?php echo $donnéesFetch['email']; ?></td>
-<td><a href="update.php?user_id=<?php echo $donnéesFetch['user_id']?>" name="edit">Editer</a></td>
+<!-- <td><a href="update.php?user_id=<?php// echo $donnéesFetch['user_id']?>" name="edit">Editer</a></td> -->
 <td><a href="deleteUser.php?user_id=<?php echo $donnéesFetch['user_id']?>" name="delete">X</a></td>
 </tr>
 

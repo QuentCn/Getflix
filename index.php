@@ -2,10 +2,21 @@
 //On démarre la session et connecte la base de données
 session_start();
 
-$db = new PDO('mysql:host=sql11.freesqldatabase.com;
-dbname=sql11507471;charset=utf8;',
- 'sql11507471',
- 'At17mKASTq');
+ try
+ { 
+    //SI NOUVEAU PROBLEME INCONNU, CHECKER ICI --------------------
+    $options =
+    [
+        PDO::MYSQL_ATTR_INIT_COMMAND =>'SET NAMES utf8',
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ];
+
+    $db = new PDO('mysql:host=sql11.freesqldatabase.com;
+    dbname=sql11507471;charset=utf8;',
+    'sql11507471',
+    'At17mKASTq',
+    $options);
 
 // ----------------------- CODE PHP POUR LOGIN ------------------------
 // condition de connexion
@@ -114,6 +125,12 @@ $dataId->execute(array($fullname));
                 $_SESSION['user_id'] = $user_id;
                 header('Location: login.php');
             }}}
+
+        }
+
+        catch(PDOException $pe){
+            echo 'ERREUR : '.$pe->getMessage();
+         }
         ?>
 
 <!-- ------------------------------  HTML  --------------------------------- -->
