@@ -65,7 +65,7 @@ foreach ($donnéesFetch as $donnéesFetch) {
 <td><?php echo $donnéesFetch['fullname']; ?></td>
 <td><?php echo $donnéesFetch['email']; ?></td>
 <td><a href="update.php?user_id=<?php echo $donnéesFetch['user_id']?>" name="edit">Editer</a></td>
-<td><a href="delete.php?user_id=<?php echo $donnéesFetch['user_id']?>" name="delete">X</a></td>
+<td><a href="deleteUser.php?user_id=<?php echo $donnéesFetch['user_id']?>" name="delete">X</a></td>
 </tr>
 
 <?php

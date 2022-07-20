@@ -10,6 +10,10 @@ dbname=sql11507471;charset=utf8;',
 // ----------------------- CODE PHP POUR LOGIN ------------------------
 // condition de connexion
 
+if($_SESSION['fullname']){
+    header('Location: home.php');
+}
+
 if(isset($_POST['login'])){
     if(empty($_POST["loginName"]) 
     OR empty($_POST['loginPassword']))
@@ -41,8 +45,12 @@ $fullname = htmlspecialchars($_POST["loginName"]);
 
 //On va chercher les données dans la database
 $dataform = $db->prepare('SELECT * FROM users WHERE fullname = ? AND password = ?');
+$dataEmail = $db->prepare('SELECT `email` FROM users WHERE fullname = ?');
+$dataId = $db->prepare('SELECT `user_id` FROM users WHERE fullname = ?');
         
 $dataform->execute(array($fullname, $password));
+$dataEmail->execute(array($fullname));
+$dataId->execute(array($fullname));
 //Si les conditions sont remplies la connexion se fait
  if(isset($_POST['login'])){
     if(!empty($_POST['loginName']) 
@@ -51,8 +59,8 @@ $dataform->execute(array($fullname, $password));
             if($dataform->rowCount() > 0){
                 $_SESSION['fullname'] = $fullname;
                 $_SESSION['password'] = $password;
-                $_SESSION['user_id'] = $dataform->fetch()['user_id'];
-                $_SESSION['email'] = $dataform->fetch()['email'];
+                $_SESSION['user_id'] = $dataId->fetch()['user_id'];
+                $_SESSION['email'] = $dataEmail->fetch()['email'];
                 header('Location: index.php');
             } else {
                 echo "Votre pseudo ou mot de passe est incorrect. ";
