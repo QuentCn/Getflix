@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/da64da315b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="./landing.css">
     <title>Getflix - Watch TV Shows Online, Watch Movies Online</title>
 </head>
 <body>
  <header class="showcase">
      <div class="showcase-top">
-        <img src="./img/getflix.png" alt="Getflix">
+        <img src="./asset/img/getflix.png" alt="Getflix">
         <a href="#" class="btn btn-rounded">Sign in</a>
      </div>
      <div class="showcase-content">
@@ -57,7 +57,7 @@
                     </p>
                     <a href="#" class="btn btn-lg">Watch Free For 30 Days</a>
                 </div>
-                <img src="./img/tab1.png">
+                <img src="./asset/img/landingpage1.png" alt="">
             </div>
         </div>
 
@@ -72,19 +72,19 @@
             
             <div class="tab-2-content-bottom">
                 <div>
-                    <img src="./img/images-1.jpeg" alt=""/>
+                    <img src="./asset/img/landingpage2.png" alt=""/>
                     <p class="text-md">Watch on your TV</p>
                     <p class="text-dark">Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray, PlayStation and more.</p>  
                 </div>
 
                 <div>
-                    <img src="./img/images-2.jpeg" alt=""/>
+                    <img src="./asset/img/landingpage3.png" alt=""/>
                     <p class="text-md">Watch instantly or download for later</p>
                     <p class="tex-dark">Available on phone and tablet, wherever you go.</p>  
                 </div>
 
                 <div>
-                    <img src="./img/images-3.jpeg" alt=""/>
+                    <img src="./asset/img/landingpage4.png" alt=""/>
                     <p class="text-md">Use any computer</p>
                     <p class="tex-dark">Watch right on getflix.com</p>  
                 </div>
