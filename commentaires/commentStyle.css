@@ -1,0 +1,14 @@
+.icons{
+    width:25px;
+    height:25px;
+}
+
+table{
+    border-collapse: collapse;
+    position: relative;
+    top: 75px;
+}
+
+td{
+    border: solid black 1px;
+}

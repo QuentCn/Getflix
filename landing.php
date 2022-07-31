@@ -39,7 +39,7 @@
 
          <div id="tab-3" class="tab-item">
              <i class="fas fa-tags fa-3x"></i>
-             <p class="hide-sm">Pick your price</p>
+             <p class="hide-sm">Pick your price now</p>
          </div>
 
      </div>
