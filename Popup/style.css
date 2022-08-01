@@ -1,0 +1,49 @@
+
+.modal {
+    position : fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+}
+
+ .modal.activer {
+    transform: translate(-50%, -50%) scale(1);
+} 
+
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+#overlay.activer{
+    opacity: 1;
+    pointer-events: all;
+} 
+
+.close-button{
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    border: solid black 1px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: none;
+    font-weight: bold;
+}
+
+.close-button:hover{
+    background-color: yellow;
+    cursor: pointer;
+}

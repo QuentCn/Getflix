@@ -175,7 +175,7 @@ $dataId->execute(array($fullname));
                 <input type="password" name="password" placeholder="Password" autocomplete="new-password">
             </div>
             <button type="submit" name="subscribe">Subscribe here !</button>
-    </form>
+        </form>
         </div>
 
     </div>

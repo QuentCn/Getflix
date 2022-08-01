@@ -14,7 +14,8 @@
  <header class="showcase">
      <div class="showcase-top">
         <img src="./asset/img/getflix.png" alt="Getflix">
-        <a href="#" class="btn btn-rounded">Sign in</a>
+        <!-- -------------------------------------- BOUTON SIGN IN --------------------------------------- -->
+        <a id="open" class="btn btn-rounded">Sign in</a>
      </div>
      <div class="showcase-content">
          <h1>See what's next</h1>
@@ -24,8 +25,6 @@
          </a>
      </div>
  </header> 
-
- <!-- <img src="asset/img/landingbackground.jpeg" alt=""> -->
  <!-- second section -->
  <section class="tabs">
      <div class="container">
@@ -161,6 +160,49 @@
         </div>
     </div>
  </section>
+
+ <!-- --------------------------- LOGIN & INSCRIPTION ------------------------ -->
+
+<div class="modal" id="modal">
+    <div class="containerLogin">
+        <div class="container-onglets">
+        <button data-close-button class="close-button">&times;</button>
+            <div class="onglets active" data-anim="1">Login</div>
+            <div class="onglets" data-anim="2">Inscription</div>
+        </div>
+            <!--Formulaire de login-->
+        <div class="contenu activateContenu" data-anim="1">
+        <form action="" method="POST">
+            <input class="input-name" type="text" name="loginName" placeholder="your name">
+            <br>
+            <input class="input-password" type="password" name="loginPassword" autocomplete="new-password" placeholder="password">
+            <br>
+            <button class="sign-in" type="submit" name="login">Sign in</button>
+        </form>
+    </div>
+
+        <!--Formulaire d'inscription-->
+    <div class="contenu desactivateContenu" data-anim="2">
+        <form action="" method="POST">
+            <div data-validate="A name is required">
+                <input type="text" name="fullname" placeholder="Fullname" autocomplete="off">
+            </div>
+            <div data-validate="An email is required">
+                <input type="text" name="email" placeholder="Email" autocomplete ="off">
+            </div>
+            <div data-validate="A password is required">    
+                <input type="password" name="password" placeholder="Password" autocomplete="new-password">
+            </div>
+            <button type="submit" name="subscribe">Subscribe here !</button>
+        </form>
+    </div>
+
+</div>
+</div>
+<div id="overlay"></div>
+
+<!-- ------------------------------------ FOOTER ---------------------------- -->
+
  <footer class="footer">
      <p>Questions? call 1-866-555-555-555</p>
     <div class="footer-cols">
@@ -192,6 +234,8 @@
         </ul>
     </div>
  </footer>
+
  <script src="landing.js"></script>
+ <script src="login.js"></script>
 </body>
 </html> 
