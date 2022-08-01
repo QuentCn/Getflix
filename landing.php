@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/da64da315b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./landing.css">
+    <link rel="stylesheet" href="landing.css">
     <title>Getflix - Watch TV Shows Online, Watch Movies Online</title>
 </head>
 <body>
@@ -24,6 +24,8 @@
          </a>
      </div>
  </header> 
+
+ <!-- <img src="asset/img/landingbackground.jpeg" alt=""> -->
  <!-- second section -->
  <section class="tabs">
      <div class="container">

@@ -12,7 +12,6 @@
 body {
     font-family:'Arial', sans-serif;
     -webkit-font-smoothing: antialiased;
-    background-color: #000;
     color: #999;
 }
 ul {
@@ -39,7 +38,7 @@ img{
     width: 100%;
     height: 93vh;
     position: relative;
-    background: url('../asset/img/landingbackground.jpeg') no-repeat center center/cover;
+    background: url('asset/img/landingbackground.jpeg') no-repeat center center/cover;
 
 }
 
