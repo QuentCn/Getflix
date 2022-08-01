@@ -2,11 +2,8 @@
 
 session_start();
 
-$db = new PDO('mysql:host=database;
-dbname=Getflix;
-charset=utf8;',
-    'root',
-    'root');
+include 'database.php';
+
 
     //Si les champs ne sont pas remplis il ne se passe rien !
     if(isset($_POST['subscribe'])){

@@ -1,8 +1,5 @@
 <?php //Je connecte mes pages au serveur
-    $db = new PDO('mysql:host=sql11.freesqldatabase.com;
-    dbname=sql11507471;charset=utf8;',
-     'sql11507471',
-     'At17mKASTq');
+include '../database.php';
 
           header('Location: admin.php')?>
 

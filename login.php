@@ -1,10 +1,8 @@
 <?php
 session_start();
 
-$db = new PDO('mysql:host=sql11.freesqldatabase.com;
-dbname=sql11507471;charset=utf8;',
- 'sql11507471',
- 'At17mKASTq');
+include 'database.php';
+
 
 if(isset($_POST['login'])){
     if(empty($_POST["fullname"]) 

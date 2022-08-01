@@ -1,9 +1,7 @@
 <?php
 session_start();
-$db = new PDO('mysql:host=sql11.freesqldatabase.com;
-dbname=sql11507471;charset=utf8;',
- 'sql11507471',
- 'At17mKASTq');
+
+include '../database.php';
 
 if($_SESSION['fullname']){
  echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['user_id'] . ' est bien connecté <br />';
