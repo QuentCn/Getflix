@@ -374,7 +374,7 @@ img{
 }
 
 
-/* STYLE DES FORMULAIRES LOGIN & INSCRIPTION */
+/* --------------------- STYLE DES FORMULAIRES LOGIN & INSCRIPTION ------------------- */
 
 .containerLogin{
     position: absolute;
@@ -417,7 +417,7 @@ img{
     opacity: 0;
 }
 
-/*Animations*/
+/* -- Animations -- */
 
 .active{
     background: midnightblue;

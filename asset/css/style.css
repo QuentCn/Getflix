@@ -355,3 +355,21 @@ main{
 .dots .dot.active{
     border-color: orange;
 }
+
+/* -------------------- STYLE POUR SECTION COMMENTAIRE ------------------------- */
+
+.icons{
+    width:25px;
+    height:25px;
+}
+
+#commentSection{
+    border-collapse: collapse;
+    position: relative;
+    top: 75px;
+    color: white;
+}
+
+td{
+    border: solid black 1px;
+}
