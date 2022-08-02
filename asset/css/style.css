@@ -48,7 +48,9 @@ body{
     color: #d0d0e4;
 }
 
-
+.colorClass:hover{
+    color: red;
+}
 
 #list {
     align-items: center;

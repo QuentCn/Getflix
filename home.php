@@ -1,3 +1,9 @@
+<?php session_start();
+
+include 'database.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +24,7 @@
 
  <nav class="navbar bg-light fixed-top">
     <div class="container-fluid" id="nav">
-      <a class="navbar-brand" id="title" href="testhome.html">Getflix</a>
+      <a class="navbar-brand" id="title" href="home.php">Getflix</a>
       <form class="d-flex" role="search" id="serchbar">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
@@ -35,7 +41,7 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" id="nav-comp" aria-current="page" href="testhome.html">Home</a>
+              <a class="nav-link active" id="nav-comp" aria-current="page" href="home.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="nav-comp" href="account.html">Vos comptes</a>
@@ -45,12 +51,13 @@
                 Nos films
               </a>
               <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                <li><a class="dropdown-item" id="nav-comp" href="Niew.html">Dernières Sorties</a></li>
-                <li><a class="dropdown-item" href="Mostviewed.html">Les plus regardés</a></li>
-                <li>
-                </li>
-                <li><a class="dropdown-item" id="nav-comp" href="pergender.html">Par Genre</a></li>
+                <li><a class="dropdown-item" id="nav-comp" href="pergender.php">Dernières Sorties</a></li>
+                <li><a class="dropdown-item" href="pergender.php">Les plus regardés</a></li>
+                <li><a class="dropdown-item" id="nav-comp" href="pergender.php">Par Genre</a></li>
               </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-comp" href="logout.php">Logout</a>
             </li>
           </ul>
         </div>

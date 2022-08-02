@@ -1,3 +1,8 @@
+<?php session_start();
+
+include 'database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
-    <link rel="stylesheet" href="asset/CSS/style.css">
+    <link rel="stylesheet" href="asset/css/style.css">
 </head>
 
 
@@ -45,6 +50,9 @@
                 </li>
                 <li><a class="dropdown-item" href="pergender.php">Par Genre</a></li>
               </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-comp" href="logout.php">Logout</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
