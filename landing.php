@@ -32,22 +32,23 @@ if(isset($_POST['login'])){
     echo"Veuillez remplir tous les champs !";
     }}
 
+    // ------------- MIS EN COMMENTAIRE CAR CETTE FONCTIONNALITE A ETE AMELIOREE --------
 // se connecter à l'espace d'administration
-if (isset($_POST['login'])){
-    if(!empty($_POST["loginName"]) AND !empty($_POST['loginPassword'])){
-        $pseudo = "admin";
-        $password = "123";
+// if (isset($_POST['login'])){
+//     if(!empty($_POST["loginName"]) AND !empty($_POST['loginPassword'])){
+//         $pseudo = "admin";
+//         $password = "123";
 
-        $pseudoWrote = htmlspecialchars($_POST['loginName']);
-        $passwordWrote = htmlspecialchars($_POST['loginPassword']);
-        if($pseudoWrote == $pseudo AND $passwordWrote == $password){
-            $_SESSION['administrateur'] = $password;
-            header('Location: administration/admin.php');
-         } 
-     };
-}
+//         $pseudoWrote = htmlspecialchars($_POST['loginName']);
+//         $passwordWrote = htmlspecialchars($_POST['loginPassword']);
+//         if($pseudoWrote == $pseudo AND $passwordWrote == $password){
+//             $_SESSION['administrateur'] = $password;
+//             header('Location: administration/admin.php');
+//          } 
+//      };
+// }
 // fin de la connexion à l'espace admin
-
+// ------------------------------------------------------------------------------------------
 
 // Connexion du membre 
 //On traduit le cryptage
@@ -58,16 +59,20 @@ $fullname = htmlspecialchars($_POST["loginName"]);
 $dataform = $db->prepare('SELECT * FROM users WHERE fullname = ? AND password = ?');
 $dataEmail = $db->prepare('SELECT `email` FROM users WHERE fullname = ?');
 $dataId = $db->prepare('SELECT `user_id` FROM users WHERE fullname = ?');
+$dataType = $db->prepare('SELECT `type` FROM users WHERE type = ?');
         
 $dataform->execute(array($fullname, $password));
 $dataEmail->execute(array($fullname));
 $dataId->execute(array($fullname));
+$dataType->execute(array($fullname));
+
 //Si les conditions sont remplies la connexion se fait
  if(isset($_POST['login'])){
     if(!empty($_POST['loginName']) 
     AND !empty($_POST['loginPassword'])){
         
             if($dataform->rowCount() > 0){
+                $_SESSION['type'] = $dataType->fetch()['type'];
                 $_SESSION['fullname'] = $fullname;
                 $_SESSION['password'] = $password;
                 $_SESSION['user_id'] = $dataId->fetch()['user_id'];
@@ -83,7 +88,8 @@ $dataId->execute(array($fullname));
     if(isset($_POST['subscribe'])){
         if(empty($_POST["fullname"]) 
         OR empty($_POST['password']) 
-        OR empty($_POST["email"])){
+        OR empty($_POST["email"])
+        OR empty($_POST["typeOfAccount"])){
         echo"Veuillez remplir tous les champs !";
         }}
         
@@ -91,12 +97,14 @@ $dataId->execute(array($fullname));
          if(isset($_POST['subscribe'])){
             if(!empty($_POST["fullname"]) 
             AND !empty($_POST['password']) 
-            AND !empty($_POST["email"])){
+            AND !empty($_POST["email"])
+            AND !empty($_POST["typeOfAccount"])){
 
                 $user_id = $_POST["user_id"];
                 $fullname = htmlspecialchars($_POST["fullname"]); //htmlspecialchars permet d'empêcher un utilisateur malveillant d'envoyer du code via l'input
                 $email = htmlspecialchars($_POST["email"]);
                 $password = sha1($_POST["password"]); //sha1 permet l'encryptage du mot de passe
+                $typeOfAccount = $_POST["typeOfAccount"];
                 
                  //On va selectionner le tout ("*") dans le table users
                 $dataform = $db->prepare('SELECT * FROM users');
@@ -107,23 +115,25 @@ $dataId->execute(array($fullname));
                 $dataFetch = $dataform->fetchAll();
                 $id = $_POST["user_id"];
             
-                $sqlQuery = 'INSERT INTO users(fullname, email, password) VALUES (:fullname, :email, :password)';
+                $sqlQuery = 'INSERT INTO users(type, fullname, email, password) VALUES (:type, :fullname, :email, :password)';
                 
                 // Préparation
                 $insertData = $db->prepare($sqlQuery);
                 
                 // Exécution, le message est maintenant dans la base de données
                 $insertData->execute([
+                    'type' => $typeOfAccount,
                     'fullname' => $fullname,
                     'email' => $email,
                     'password' => $password,
                 ]);
-        
-                $_SESSION['fullname'] = $fullname;
-                $_SESSION['password'] = $password;
-                $_SESSION['email'] = $email;
-                $_SESSION['user_id'] = $user_id;
-                header('Location: home.php');
+        // J'ai mis cette partie en commentaire car bug au niveau de l'id, pas le temps de modifier ça pour l'instant
+                // $_SESSION['type'] = $typeOfAccount;
+                // $_SESSION['fullname'] = $fullname;
+                // $_SESSION['password'] = $password;
+                // $_SESSION['email'] = $email;
+                // $_SESSION['user_id'] = $user_id;
+                echo'Félicitation ! Vous êtes désormais inscrit !';
             }}}
 
         }
@@ -305,7 +315,7 @@ $dataId->execute(array($fullname));
             <div class="onglets active" data-anim="1">Login</div>
             <div class="onglets" data-anim="2">Inscription</div>
         </div>
-            <!--Formulaire de login-->
+            <!-- -------- Formulaire de login -------- -->
         <div class="contenu activateContenu" data-anim="1">
         <form action="" method="POST">
             <input class="input-name" type="text" name="loginName" placeholder="your name">
@@ -316,7 +326,7 @@ $dataId->execute(array($fullname));
         </form>
     </div>
 
-        <!--Formulaire d'inscription-->
+        <!-- --------- Formulaire d'inscription -------- -->
     <div class="contenu desactivateContenu" data-anim="2">
         <form action="" method="POST">
             <div data-validate="A name is required">
@@ -328,6 +338,15 @@ $dataId->execute(array($fullname));
             <div data-validate="A password is required">    
                 <input type="password" name="password" placeholder="Password" autocomplete="new-password">
             </div>
+            <div>
+                <select name="typeOfAccount">
+                    <option value="">Type of account</option>
+                    <option value="free">Free</option>
+                    <option value="premium">Premium</option>
+                    <option value="admin">Administrator</option>
+                </select>
+            </div>
+
             <button type="submit" name="subscribe">Subscribe here !</button>
         </form>
     </div>
@@ -336,7 +355,7 @@ $dataId->execute(array($fullname));
 </div>
 <div id="overlay"></div>
 
-<!-- ------------------------------------ FOOTER ---------------------------- -->
+<!-- ------------------------------------ FOOTER ------------------------------- -->
 
  <footer class="footer">
      <p>Questions? call 1-866-555-555-555</p>

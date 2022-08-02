@@ -180,9 +180,9 @@ $commentID = $dataComId->fetch()['commentID'];
             <td><?php echo $dataFetchCom['fullname']; ?></td>
             <td><?php echo $dataFetchCom['email']; ?></td>
             <td><?php echo $dataFetchCom['comment']; ?></td>
-            <?php if($_SESSION['administrateur']){echo
-            '<td><a href="updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit"><img class="icons" src="../asset/img/wrench.png" alt="clé à molette"></img></a></td>
-            <td><a href="deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete"><img class="icons" src="../asset/img/cross.png" alt="croix"></img></a></td>';
+            <?php if($_SESSION['type'] = 'admin'){echo
+            '<td><a href="commentaires/updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit"><img class="icons" src="asset/img/wrench.png" alt="clé à molette"></img></a></td>
+            <td><a href="commentaires/deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete"><img class="icons" src="asset/img/cross.png" alt="croix"></img></a></td>';
         };?>
 
             </tr>
@@ -190,7 +190,6 @@ $commentID = $dataComId->fetch()['commentID'];
             <?php
             }?>
             </table>
-
 
 <!-- lien js-->
 

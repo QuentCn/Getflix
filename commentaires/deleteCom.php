@@ -2,7 +2,7 @@
     include '../database.php';
 
 
-          header('Location: commente.php')?>
+          header('Location: home.php')?>
 
 <?php //On va selectionner le tout ("*") dans le table users
 $donnéesFormulaire = $db->prepare('SELECT * FROM comments WHERE commentID');?>

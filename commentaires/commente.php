@@ -4,7 +4,7 @@ session_start();
 include '../database.php';
 
 if($_SESSION['fullname']){
- echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['user_id'] . ' est bien connecté <br />';
+ echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['type'] . ' est bien connecté <br />';
 };
 
 $dataform = $db->prepare('SELECT * FROM `users`');

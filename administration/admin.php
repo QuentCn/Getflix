@@ -2,7 +2,7 @@
 session_start();
 include '../database.php';
 
- if(!$_SESSION['administrateur']){
+ if(!$_SESSION['type'] = 'admin'){
     header('Location: ../index.php');
     }?>
 

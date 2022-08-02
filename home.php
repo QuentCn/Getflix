@@ -185,8 +185,9 @@ js pas encore fait -->
 <!-- ----------------------------------- TEST ZONE COMMENTAIRE ------------------------------------- -->
 
 <?php
+
 if($_SESSION['fullname']){
- echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['user_id'] . ' est bien connecté <br />';
+ echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['user_id'] . 'et son type est' . $_SESSION['type'] . ' est bien connecté <br />';
 };
 
 $dataform = $db->prepare('SELECT * FROM `users`');
@@ -234,6 +235,7 @@ $commentID = $dataComId->fetch()['commentID'];
               $dataform->execute();
               $dataFetch = $dataform->fetchAll();
               $id = $_POST["user_id"];
+              //$adminAccount = $dataform->fetch()['type'];
           
               $sqlQuery = 'INSERT INTO `comments`(user_id, fullname, email, comment) VALUES (:user_id, :fullname, :email, :comment)';
               
@@ -250,10 +252,16 @@ $commentID = $dataComId->fetch()['commentID'];
     }}};
                   
 ?>
+
+<?php if($_SESSION['type'] == 'admin' OR $_SESSION['type'] == 'premium'){
+echo '
     <form action="" method="POST">
     <input type="text" name="comment" style="width: 450px; height: 200px">
     <button type="submit" name="submit">Envoyer votre commentaire</button>
-    </form>
+    </form>'?>
+    <?php
+  };
+?>
 
             <table id="commentSection">
             <tr>
@@ -261,8 +269,8 @@ $commentID = $dataComId->fetch()['commentID'];
                     <th>fullname</th>
                     <th>Email</th>
                     <th>Comment</th>
-                    <?php if($_SESSION['administrateur']){echo "<th>Editer</th>
-                    <th>Supprimer</th>";
+                    <?php if($_SESSION['type'] == 'admin'){echo "<th>Edit</th>
+                    <th>Delete</th>";
                     };?>
             </tr> 
             <?php //on va afficher ce qu'on veut qui provient de table users
@@ -273,9 +281,9 @@ $commentID = $dataComId->fetch()['commentID'];
             <td><?php echo $dataFetchCom['fullname']; ?></td>
             <td><?php echo $dataFetchCom['email']; ?></td>
             <td><?php echo $dataFetchCom['comment']; ?></td>
-            <?php if($_SESSION['administrateur']){echo
-            '<td><a href="updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit"><img class="icons" src="../asset/img/wrench.png" alt="clé à molette"></img></a></td>
-            <td><a href="deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete"><img class="icons" src="../asset/img/cross.png" alt="croix"></img></a></td>';
+            <?php if($_SESSION['type'] == 'admin'){echo
+            '<td><a href="commentaires/updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit"><img class="icons" src="asset/img/wrench.png" alt="clé à molette"></img></a></td>
+            <td><a href="commentaires/deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete"><img class="icons" src="asset/img/cross.png" alt="croix"></img></a></td>';
         };?>
 
             </tr>
