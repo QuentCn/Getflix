@@ -48,7 +48,6 @@ $insertText->execute([
 ]);
 ?>
 
-
 <table>
 <tr>
         <th>Id</th>

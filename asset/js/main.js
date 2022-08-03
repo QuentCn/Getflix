@@ -111,7 +111,6 @@ function highlightSelection() {
             hightlightedTag.classList.add('highlight');
         })
     }
-
 }
 
 function clearBtn(){
@@ -131,7 +130,6 @@ function clearBtn(){
         })
         tagsEl.append(clear);
     }
-    
 }
 
 getMovies(API_URL);
@@ -165,11 +163,8 @@ function getMovies(url) {
         }else{
             main.innerHTML= `<h1 class="no-results">No Results Found</h1>`
         }
-       
     })
-
 }
-
 
 function showMovies(data) {
     main.innerHTML = '';
@@ -190,9 +185,7 @@ function showMovies(data) {
                 <br/> 
                 <button class="know-more" id="${id}">Know More</button
             </div>
-        
         `
-
         main.appendChild(movieEl);
 
         document.getElementById(id).addEventListener('click', () => {
@@ -325,7 +318,6 @@ form.addEventListener('submit', (e) => {
     }else{
         getMovies(API_URL);
     }
-
 })
 
 prev.addEventListener('click', () => {

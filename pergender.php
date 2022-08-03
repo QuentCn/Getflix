@@ -55,6 +55,7 @@ include 'database.php';
               <a class="nav-link" id="nav-comp" href="logout.php">Logout</a>
             </li>
           </ul>
+          <!-- --------------------------- BARRE DE RECHERCHE --------------------- -->
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Rechercher</button>
@@ -63,11 +64,11 @@ include 'database.php';
       </div>
     </div>
  </nav>
-<!-- Fin de la barre de navigation -->
 
+<!-- Fin de la barre de navigation -->
 <div class="container-lg">
   <div id="tags"></div>
-  <div id="myNav" class="overlay">
+    <div id="myNav" class="overlay">
 
       <!-- Pour fermer l'overlay -->
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -80,13 +81,12 @@ include 'database.php';
       <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow" >&#8658;</a>
 
     </div>
-  <main id="main"></main>
-  <div class="pagination">
-      <div class="page" id="prev">Previous Page</div>
-      <div class="current" id="current">1</div>
-      <div class="page" id="next">Next Page</div>
-
-  </div>
+    <main id="main"></main>
+    <div class="pagination">
+        <div class="page" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="page" id="next">Next Page</div>
+    </div>
 </div>
 
 <!-- ----------------------------------- TEST ZONE COMMENTAIRE ------------------------------------- -->
