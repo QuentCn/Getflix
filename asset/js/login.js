@@ -62,3 +62,5 @@ function openModal(){
 function closeModal(modal) {
     return openPanel.classList.remove('activer'), overlay.classList.remove('activer');
 };
+
+// ------------------ IF THE INPUT FIELD IS EMPTY ----------------------

@@ -58,6 +58,12 @@ $firstLetterProfile = $_SESSION['fullname'][0];
                 <li><a class="dropdown-item" id="nav-comp" href="pergender.php">Par Genre</a></li>
               </ul>
             </li>
+            <?php if($_SESSION['type'] == 'admin'){
+            echo'<li class="nav-item">
+              <a class="nav-link" id="nav-comp" href="administration/admin.php">Administration</a>
+            </li>' ?>
+       <?php };
+            ?>
             <li class="nav-item">
               <a class="nav-link" id="nav-comp" href="logout.php">Logout</a>
             </li>
