@@ -90,6 +90,7 @@ $dataType->execute(array($fullname));
         OR empty($_POST['password']) 
         OR empty($_POST["email"])
         OR empty($_POST["typeOfAccount"])){
+            
         echo"Veuillez remplir tous les champs !";
         }}
         
@@ -158,7 +159,7 @@ $dataType->execute(array($fullname));
  <header class="showcase">
      <div class="showcase-top">
         <img src="./asset/img/getflix.png" alt="Getflix">
-        <!-- -------------------------------------- BOUTON SIGN IN --------------------------------------- -->
+<!-- -------------------------------------- BOUTON SIGN IN --------------------------------------- -->
         <a id="open" class="btn btn-rounded">Sign in</a>
      </div>
      <div class="showcase-content">
@@ -310,43 +311,39 @@ $dataType->execute(array($fullname));
 <div class="modal" id="modal">
     <div class="containerLogin">
         <div class="container-onglets">
-        <button data-close-button class="close-button">&times;</button>
+        <button data-close-button class="close-button"></button>
             <div class="onglets active" data-anim="1">Login</div>
             <div class="onglets" data-anim="2">Inscription</div>
         </div>
             <!-- -------- Formulaire de login -------- -->
         <div class="contenu activateContenu" data-anim="1">
         <form action="" method="POST">
-            <input class="input-name" type="text" name="loginName" placeholder="your name" oninvalid="document.write('Must contain 6 or more characters');" required>
+            <input id="logName" class="input-name logField" type="text" name="loginName" placeholder="Username" required><span class="errorLog"></span>
             <br>
-            <input class="input-password" type="password" name="loginPassword" autocomplete="new-password" placeholder="password" required>
+            <input id="logPassword" class="input-password logField" type="password" name="loginPassword" autocomplete="new-password" placeholder="Password" required><span class="errorLog"></span>
             <br>
-            <button class="sign-in" type="submit" name="login">Sign in</button>
+            <button id="loginButton" class="sign-in logField" type="submit" name="login" cursor="pointer">Login in</button>
         </form>
     </div>
 
         <!-- --------- Formulaire d'inscription -------- -->
     <div class="contenu desactivateContenu" data-anim="2">
         <form action="" method="POST">
-            <div data-validate="A name is required">
-                <input type="text" name="fullname" placeholder="Fullname" autocomplete="off" required>
-            </div>
-            <div data-validate="An email is required">
-                <input type="text" name="email" placeholder="Email" autocomplete ="off" required>
-            </div>
-            <div data-validate="A password is required">    
-                <input type="password" name="password" placeholder="Password" autocomplete="new-password" required>
-            </div>
+                <input id="subName" class="subField" type="text" name="fullname" placeholder="Fullname" autocomplete="off" required><span id="errorNameSub" class="hideError"></span> 
+                <br>        
+                <input id="subEmail" class="subField" type="text" name="email" placeholder="Email" autocomplete ="off" required><span id="errorEmailSub" class="hideError"></span>
+                <br>
+                <input id="subPassword" class="subField" type="password" name="password" placeholder="Password" autocomplete="new-password" required><span id="errorPasswordSub" class="hideError"></span>
             <div>
-                <select name="typeOfAccount">
-                    <option value="">Type of account</option>
-                    <option value="free">Free</option>
-                    <option value="premium">Premium</option>
-                    <option value="admin">Administrator</option>
+                <select required name="typeOfAccount">
+                    <option required value="">Type of account</option>
+                    <option required value="free">Free</option>
+                    <option required value="premium">Premium</option>
+                    <option required value="admin">Administrator</option>
                 </select>
-            </div>
+            </div><span id="errorAccountType" class="hideError"></span>
 
-            <button type="submit" name="subscribe">Subscribe here !</button>
+            <button id="subscribeButton" type="submit" name="subscribe">Subscribe here !</button>
         </form>
     </div>
 

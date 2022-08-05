@@ -166,6 +166,8 @@ function getMovies(url) {
     })
 }
 
+// --------------------------------------- THE ID IS HERE ---------------------------------
+
 function showMovies(data) {
     main.innerHTML = '';
 
@@ -182,8 +184,9 @@ function showMovies(data) {
             <div class="overview">
                 <h3>Overview</h3>
                 ${overview}
-                <br/> 
-                <button class="know-more" id="${id}">Know More</button
+                <br/> <form action="" method="GET">
+                <a href="pagealacon.php?id=${id}" type="submit" name="movie_id" class="know-more" id="${id}">Know More</a>
+                </form>
             </div>
         `
         main.appendChild(movieEl);
@@ -191,6 +194,7 @@ function showMovies(data) {
         document.getElementById(id).addEventListener('click', () => {
           console.log(id)
           openNav(movie)
+          document.getElementById("moviesId").value=id;
         })
     })
 }
@@ -219,6 +223,7 @@ function openNav(movie) {
             dots.push(`
               <span class="dot">${idx + 1}</span>
             `)
+
           }
         })
         
