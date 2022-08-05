@@ -188,10 +188,11 @@ function showMovies(data) {
                 <h3>Overview</h3>
                 ${overview}
                 <br/> 
-                <button class="know-more" id="${id}">Know More</button
+                <form action="film.php" method="GET" id="${id}">
+                <a href="film.php?id=${id}" class="btn btn-primary">More Info</a>
             </div>
         
-        `
+        `;
 
         main.appendChild(movieEl);
 
@@ -202,7 +203,11 @@ function showMovies(data) {
     })
 }
 
+
+
+
 const overlayContent = document.getElementById('overlay-content');
+
 /* Ouvrir les "span" */
 function openNav(movie) {
   let id = movie.id;
@@ -218,14 +223,14 @@ function openNav(movie) {
 
           if(site == 'YouTube'){
               
-            embed.push(`
+            /*embed.push(`
               <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" title="${name}" class="embed hide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           
           `)
 
             dots.push(`
               <span class="dot">${idx + 1}</span>
-            `)
+            `)*/
           }
         })
         
@@ -238,17 +243,17 @@ function openNav(movie) {
         <div class="dots">${dots.join('')}</div>
         
         `
-        overlayContent.innerHTML = content;
+        /*overlayContent.innerHTML = content;
         activeSlide=0;
         showVideos();
       }else{
-        overlayContent.innerHTML = `<h1 class="no-results">No Results Found</h1>`
+        overlayContent.innerHTML = `<h1 class="no-results">No Results Found</h1>`*/
       }
     }
   })
 }
 
-/* bouton close (x) */
+/* bouton close (x) 
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
@@ -256,7 +261,7 @@ function closeNav() {
 var activeSlide = 0;
 var totalVideos = 0;
 
-function showVideos(){
+/*function showVideos(){
   let embedClasses = document.querySelectorAll('.embed');
   let dots = document.querySelectorAll('.dot');
 
@@ -302,7 +307,7 @@ rightArrow.addEventListener('click', () => {
   }
   showVideos()
 })
-
+*/
 
 function getColor(vote) {
     if(vote>= 8){
@@ -314,7 +319,7 @@ function getColor(vote) {
     }
 }
 
-form.addEventListener('submit', (e) => {
+searchbar.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const searchTerm = search.value;
@@ -343,9 +348,13 @@ next.addEventListener('click', () => {
 function pageCall(page){
   let urlSplit = lastUrl.split('?');
   let queryParams = urlSplit[1].split('&');
+
   let key = queryParams[queryParams.length -1].split('=');
+
   if(key[0] != 'page'){
+
     let url = lastUrl + '&page='+page
+
     getMovies(url);
   }else{
     key[1] = page.toString();
@@ -356,3 +365,7 @@ function pageCall(page){
     getMovies(url);
   }
 }
+
+
+/*js film.php*/
+
