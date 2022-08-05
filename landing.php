@@ -135,7 +135,6 @@ $dataType->execute(array($fullname));
                 // $_SESSION['user_id'] = $user_id;
                 echo'Félicitation ! Vous êtes désormais inscrit !';
             }}}
-
         }
 
         catch(PDOException $pe){
@@ -152,7 +151,7 @@ $dataType->execute(array($fullname));
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/da64da315b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="asset/css/landing.css">
     <title>Getflix - Watch TV Shows Online, Watch Movies Online</title>
 </head>
 <body>
@@ -318,9 +317,9 @@ $dataType->execute(array($fullname));
             <!-- -------- Formulaire de login -------- -->
         <div class="contenu activateContenu" data-anim="1">
         <form action="" method="POST">
-            <input class="input-name" type="text" name="loginName" placeholder="your name">
+            <input class="input-name" type="text" name="loginName" placeholder="your name" oninvalid="document.write('Must contain 6 or more characters');" required>
             <br>
-            <input class="input-password" type="password" name="loginPassword" autocomplete="new-password" placeholder="password">
+            <input class="input-password" type="password" name="loginPassword" autocomplete="new-password" placeholder="password" required>
             <br>
             <button class="sign-in" type="submit" name="login">Sign in</button>
         </form>
@@ -330,13 +329,13 @@ $dataType->execute(array($fullname));
     <div class="contenu desactivateContenu" data-anim="2">
         <form action="" method="POST">
             <div data-validate="A name is required">
-                <input type="text" name="fullname" placeholder="Fullname" autocomplete="off">
+                <input type="text" name="fullname" placeholder="Fullname" autocomplete="off" required>
             </div>
             <div data-validate="An email is required">
-                <input type="text" name="email" placeholder="Email" autocomplete ="off">
+                <input type="text" name="email" placeholder="Email" autocomplete ="off" required>
             </div>
             <div data-validate="A password is required">    
-                <input type="password" name="password" placeholder="Password" autocomplete="new-password">
+                <input type="password" name="password" placeholder="Password" autocomplete="new-password" required>
             </div>
             <div>
                 <select name="typeOfAccount">
@@ -389,7 +388,7 @@ $dataType->execute(array($fullname));
     </div>
  </footer>
 
- <script src="landing.js"></script>
- <script src="login.js"></script>
+ <script src="asset/js/landing.js"></script>
+ <script src="asset/js/login.js"></script>
 </body>
 </html> 

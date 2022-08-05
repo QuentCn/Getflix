@@ -2,6 +2,7 @@
 
 include 'database.php';
 
+$firstLetterProfile = $_SESSION['fullname'][0];
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +31,8 @@ include 'database.php';
         <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
       </form>
       <button class="navbar-toggler btn btn-info btn-circle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" id="nav-button">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon" id="profileImage"><?php echo $firstLetterProfile; ?>
+</span>
       </button>
       
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -56,6 +58,12 @@ include 'database.php';
                 <li><a class="dropdown-item" id="nav-comp" href="pergender.php">Par Genre</a></li>
               </ul>
             </li>
+            <?php if($_SESSION['type'] == 'admin'){
+            echo'<li class="nav-item">
+              <a class="nav-link" id="nav-comp" href="administration/admin.php">Administration</a>
+            </li>' ?>
+       <?php };
+            ?>
             <li class="nav-item">
               <a class="nav-link" id="nav-comp" href="logout.php">Logout</a>
             </li>

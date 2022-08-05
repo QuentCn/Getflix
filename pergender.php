@@ -1,6 +1,8 @@
 <?php session_start();
 
 include 'database.php';
+$firstLetterProfile = $_SESSION['fullname'][0];
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +26,7 @@ include 'database.php';
     <div class="container-fluid" id="nav">
       <a class="navbar-brand" id="title" href="home.php">Getflix</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" id="nav-button">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"><?php echo $firstLetterProfile; ?></span>
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
@@ -55,6 +57,7 @@ include 'database.php';
               <a class="nav-link" id="nav-comp" href="logout.php">Logout</a>
             </li>
           </ul>
+          <!-- --------------------------- BARRE DE RECHERCHE --------------------- -->
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Rechercher</button>
@@ -63,11 +66,11 @@ include 'database.php';
       </div>
     </div>
  </nav>
-<!-- Fin de la barre de navigation -->
 
+<!-- Fin de la barre de navigation -->
 <div class="container-lg">
   <div id="tags"></div>
-  <div id="myNav" class="overlay">
+    <div id="myNav" class="overlay">
 
       <!-- Pour fermer l'overlay -->
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -79,17 +82,7 @@ include 'database.php';
       
       <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow" >&#8658;</a>
 
-    </div>
-  <main id="main"></main>
-  <div class="pagination">
-      <div class="page" id="prev">Previous Page</div>
-      <div class="current" id="current">1</div>
-      <div class="page" id="next">Next Page</div>
-
-  </div>
-</div>
-
-<!-- ----------------------------------- TEST ZONE COMMENTAIRE ------------------------------------- -->
+        <!-- ----------------------------------- TEST ZONE COMMENTAIRE ------------------------------------- -->
 
 <?php
 if($_SESSION['fullname']){
@@ -168,7 +161,7 @@ $commentID = $dataComId->fetch()['commentID'];
                     <th>fullname</th>
                     <th>Email</th>
                     <th>Comment</th>
-                    <?php if($_SESSION['administrateur']){echo "<th>Editer</th>
+                    <?php if($_SESSION['type'] =='admin'){echo "<th>Editer</th>
                     <th>Supprimer</th>";
                     };?>
             </tr> 
@@ -180,7 +173,7 @@ $commentID = $dataComId->fetch()['commentID'];
             <td><?php echo $dataFetchCom['fullname']; ?></td>
             <td><?php echo $dataFetchCom['email']; ?></td>
             <td><?php echo $dataFetchCom['comment']; ?></td>
-            <?php if($_SESSION['type'] = 'admin'){echo
+            <?php if($_SESSION['type'] == 'admin'){echo
             '<td><a href="commentaires/updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit"><img class="icons" src="asset/img/wrench.png" alt="clé à molette"></img></a></td>
             <td><a href="commentaires/deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete"><img class="icons" src="asset/img/cross.png" alt="croix"></img></a></td>';
         };?>
@@ -190,6 +183,17 @@ $commentID = $dataComId->fetch()['commentID'];
             <?php
             }?>
             </table>
+
+    </div>
+
+    
+    <main id="main"></main>
+    <div class="pagination">
+        <div class="page" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="page" id="next">Next Page</div>
+    </div>
+</div>
 
 <!-- lien js-->
 
