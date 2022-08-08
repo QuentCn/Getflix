@@ -376,6 +376,12 @@ img{
 
 /* --------------------- STYLE DES FORMULAIRES LOGIN & INSCRIPTION ------------------- */
 
+#open:hover{
+    background-color: #1a1a2e;
+    /* border: 1px solid #cc6d0d; */
+    transition: all 0.3s ease;
+}
+
 @media (min-width: 750px) {
     .containerLogin{
         position: absolute;

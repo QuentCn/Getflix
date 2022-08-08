@@ -89,17 +89,25 @@ $dataType->execute(array($fullname));
         if(empty($_POST["fullname"]) 
         OR empty($_POST['password']) 
         OR empty($_POST["email"])
-        OR empty($_POST["typeOfAccount"])){
+        OR empty($_POST["typeOfAccount"])
+        OR empty($_POST['confirmPassword'])){
             
         echo"Veuillez remplir tous les champs !";
         }}
+
+    if(isset($_POST['subscribe'])){
+        if($_POST['password'] != $_POST['confirmPassword']){
+        echo"Veuillez faire correspondre vos deux mots de passe.";
+    }}
         
     if(isset($_POST['subscribe'])){
          if(isset($_POST['subscribe'])){
             if(!empty($_POST["fullname"]) 
-            AND !empty($_POST['password']) 
+            AND !empty($_POST['password'])
+            AND !empty($_POST['confirmPassword']) 
             AND !empty($_POST["email"])
-            AND !empty($_POST["typeOfAccount"])){
+            AND !empty($_POST["typeOfAccount"])
+            AND $_POST['password'] == $_POST['confirmPassword']){
 
                 $user_id = $_POST["user_id"];
                 $fullname = htmlspecialchars($_POST["fullname"]); //htmlspecialchars permet d'empêcher un utilisateur malveillant d'envoyer du code via l'input
@@ -165,7 +173,7 @@ $dataType->execute(array($fullname));
      <div class="showcase-content">
          <h1>See what's next</h1>
          <p>Watch anywhere. Cancel anytime</p>
-         <a href="#" class="btn btn-xl">
+         <a id="watchFree" class="btn btn-xl">
              Watch Free For 30 Days <i class="fas fa-chevron-right btn-icon"></i>
          </a>
      </div>
@@ -312,11 +320,11 @@ $dataType->execute(array($fullname));
     <div class="containerLogin">
         <div class="container-onglets">
         <button data-close-button class="close-button"></button>
-            <div class="onglets logTabButton active" data-anim="1">Login</div>
-            <div class="onglets subTabButton" data-anim="2">Sign in</div>
+            <div class="onglets logTabButton" data-anim="1">Login</div>
+            <div class="onglets subTabButton" data-anim="2">Sign up</div>
         </div>
             <!-- -------- Formulaire de login -------- -->
-        <div class="contenu activateContenu" data-anim="1">
+        <div class="contenu contenuLog" data-anim="1">
         <form action="" method="POST">
             <input id="logName" class="input-name logField" type="text" name="loginName" placeholder="Username" required><span class="errorLog"></span>
             <br>
@@ -327,19 +335,19 @@ $dataType->execute(array($fullname));
     </div>
 
         <!-- --------- Formulaire d'inscription -------- -->
-    <div class="contenu desactivateContenu" data-anim="2">
+    <div class="contenu contenuSub" data-anim="2">
         <form action="" method="POST" id="subForm">
                 <input id="subName" class="subField" type="text" name="fullname" placeholder="Username" autocomplete="off" required><span id="errorNameSub" class="hideError"></span> 
                 <input id="subEmail" class="subField" type="text" name="email" placeholder="Email" autocomplete ="off" required><span id="errorEmailSub" class="hideError"></span>
 
                 <br>
                 <input id="subPassword" class="subField" type="password" name="password" placeholder="Password" autocomplete="new-password" required><span id="errorPasswordSub" class="hideError"></span>
-                <input id="subConfirmPassword" class="subField" type="password" name="confirmPassword" placeholder="Confirm your password" autocomplete="new-password" required><span id="errorPasswordSub" class="hideError"></span>
+                <input id="subConfirmPassword" class="subField" type="password" name="confirmPassword" placeholder="Confirm password" autocomplete="new-password" required><span id="errorPasswordSub" class="hideError"></span>
 
             <div>
                 <select required id="typeOfAccount" class="subFieldAccountType" name="typeOfAccount">
                     <option required value="">Type of account</option>
-                    <option required value="free">Free</option>
+                    <option required id="optionFree" value="free">Free</option>
                     <option required value="premium">Premium</option>
                     <option required value="admin">Administrator</option>
                 </select>

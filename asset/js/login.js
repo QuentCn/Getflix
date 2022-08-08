@@ -44,6 +44,12 @@ console.log(closeSignIn);
 
 openSignIn.addEventListener('click', () => {
     openModal();
+    subTabButton.classList.remove("active");
+    logTabButton.classList.add("active");
+    contenuLog.classList.add('activateContenu');
+    contenuSub.classList.add('desactivateContenu');
+    contenuLog.classList.remove('desactivateContenu');
+    contenuSub.classList.remove('activateContenu');
 });
 
 overlay.addEventListener('click', () => {
@@ -63,12 +69,36 @@ function closeModal(modal) {
     return openPanel.classList.remove('activer'), overlay.classList.remove('activer');
 };
 
+// ----------------- POP UP WATCH FREE ------------------
+
+const openSignUp = document.getElementById('watchFree');
+const logTabButton = document.querySelector('.logTabButton');
+const subTabButton = document.querySelector('.subTabButton');
+const contenuLog = document.querySelector('.contenuLog');
+const contenuSub = document.querySelector('.contenuSub');
+
+openSignUp.addEventListener('click', () => {
+    openModal();
+    subTabButton.classList.add("active");
+    logTabButton.classList.remove("active");
+    contenuSub.classList.add('activateContenu');
+    contenuLog.classList.add('desactivateContenu');
+    contenuSub.classList.remove('desactivateContenu');
+    contenuLog.classList.remove('activateContenu');
+});
+
+// --------------------------   ERROR   ------------------------------
 // ------------------ IF THE INPUT FIELD IS EMPTY ----------------------
 
-// ----------------------- INSCRIPTION --------------------
+// ----------------------- INSCRIPTION ERROR --------------------
 
 let checkSubFields = document.getElementById("subscribeButton");
 let inputSubFields = document.querySelectorAll(".subField");
+let checkTypeOfAccount = document.getElementById("typeOfAccount");
+let free = document.getElementById("optionFree");
+let premium = document.getElementById("optionPremium");
+let admin = document.getElementById("optionAdmin");
+
 
 checkSubFields.addEventListener("click", () => {
     //  if(document.getElementById("subName").value == ""){
@@ -80,16 +110,22 @@ checkSubFields.addEventListener("click", () => {
      for (var i=0; i < inputSubFields.length; i++){
         if (inputSubFields[i].value == ""){
             inputSubFields[i].style.borderColor ="red";
-            document.querySelectorAll(".hideError")[i].innerHTML="Please,complete the field.";
+            // document.querySelectorAll(".hideError")[i].innerHTML="Please,complete the field.";
         }
         else if (inputSubFields[i].value.length >= 1){
             inputSubFields[i].style.borderColor ="green";
-            document.querySelectorAll(".hideError")[i].innerHTML="";
+            // document.querySelectorAll(".hideError")[i].innerHTML="";
         }
     }
+    // if (checkTypeOfAccount != free.innerHTML || checkTypeOfAccount != premium.innerHTML || checkTypeOfAccount != admin.innerHTML){
+    //     checkTypeOfAccount.style.borderColor = "red";
+    // }
+    // else if (checkTypeOfAccount = free.innerHTML || checkTypeOfAccount == premium.innerHTML || checkTypeOfAccount == admin.innerHTML){
+    //     checkTypeOfAccount.style.borderColor = "green";
+    // }
 });
 
-// --------------- LOGIN ---------------------
+// --------------- LOGIN ERROR---------------------
 
 let checkLogFields = document.getElementById("loginButton");
 let inputLogFields = document.querySelectorAll(".logField");
@@ -98,11 +134,11 @@ checkLogFields.addEventListener("click", () => {
      for (var i=0; i < inputLogFields.length; i++){
         if (inputLogFields[i].value == ""){
             inputLogFields[i].style.borderColor ="red";
-            document.querySelectorAll(".errorLog")[i].innerHTML="Please,complete the field.";
+            // document.querySelectorAll(".errorLog")[i].innerHTML="Please,complete the field.";
         }
         else if (inputLogFields[i].value.length >= 1){
             inputLogFields[i].style.borderColor ="green";
-            document.querySelectorAll(".errorLog")[i].innerHTML="";
+            // document.querySelectorAll(".errorLog")[i].innerHTML="";
         }
     }
 });
