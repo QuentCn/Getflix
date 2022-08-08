@@ -25,12 +25,17 @@ if($_SESSION['fullname']){
     header('Location: home.php');
 }
 
-if(isset($_POST['login'])){
-    if(empty($_POST["loginName"]) 
-    OR empty($_POST['loginPassword']))
-    {
-    echo"Veuillez remplir tous les champs !";
-    }}
+    // ------------- MIS EN COMMENTAIRE CAR CETTE FONCTIONNALITE A ETE AMELIOREE --------
+
+// if(isset($_POST['login'])){
+//     if(empty($_POST["loginName"]) 
+//     OR empty($_POST['loginPassword']))
+//     {
+//     echo"Veuillez remplir tous les champs !";
+//     }}
+
+
+
 
     // ------------- MIS EN COMMENTAIRE CAR CETTE FONCTIONNALITE A ETE AMELIOREE --------
 // se connecter à l'espace d'administration

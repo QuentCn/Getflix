@@ -743,6 +743,7 @@ img{
 
     #loginButton{
         background-color: #cc6d0d;
+        border: solid 1px #cc6d0d;
     }
 
     #loginButton:hover{
@@ -813,4 +814,17 @@ img{
         top: 50px;
         left: 15px;
     }
+}
+
+/* -------------- TAILLE BOUTON WATCH FOR FREE -------------------- */
+
+#watchFree{
+    width: 400px;
+    font-size: 22px;
+    border: solid 2px #cc6d0d;
+}
+
+#watchFree:hover{
+    background-color: #1a1a2e;
+    transition: all 0.3s ease;
 }
