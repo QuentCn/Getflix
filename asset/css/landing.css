@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #e50914;
-    --dark-color: #141414;
-    --light-color: #f4f4f4;
+    --primary-color: #cc6d0d;
+    --dark-color: #1a1a2e;
+    --light-color: #382e5a;
 }
 *{
     box-sizing: border-box;

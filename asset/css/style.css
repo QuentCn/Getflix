@@ -426,7 +426,6 @@ main{
     }
 
     table{
-        border-collapse: collapse;
         position: relative;
         top: 75px;
         color: white;
