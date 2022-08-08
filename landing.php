@@ -312,8 +312,8 @@ $dataType->execute(array($fullname));
     <div class="containerLogin">
         <div class="container-onglets">
         <button data-close-button class="close-button"></button>
-            <div class="onglets active" data-anim="1">Login</div>
-            <div class="onglets" data-anim="2">Inscription</div>
+            <div class="onglets logTabButton active" data-anim="1">Login</div>
+            <div class="onglets subTabButton" data-anim="2">Sign in</div>
         </div>
             <!-- -------- Formulaire de login -------- -->
         <div class="contenu activateContenu" data-anim="1">
@@ -322,20 +322,22 @@ $dataType->execute(array($fullname));
             <br>
             <input id="logPassword" class="input-password logField" type="password" name="loginPassword" autocomplete="new-password" placeholder="Password" required><span class="errorLog"></span>
             <br>
-            <button id="loginButton" class="sign-in logField" type="submit" name="login" cursor="pointer">Login in</button>
+            <button id="loginButton" class="sign-in logField" type="submit" name="login" cursor="pointer">Login</button>
         </form>
     </div>
 
         <!-- --------- Formulaire d'inscription -------- -->
     <div class="contenu desactivateContenu" data-anim="2">
-        <form action="" method="POST">
-                <input id="subName" class="subField" type="text" name="fullname" placeholder="Fullname" autocomplete="off" required><span id="errorNameSub" class="hideError"></span> 
-                <br>        
+        <form action="" method="POST" id="subForm">
+                <input id="subName" class="subField" type="text" name="fullname" placeholder="Username" autocomplete="off" required><span id="errorNameSub" class="hideError"></span> 
                 <input id="subEmail" class="subField" type="text" name="email" placeholder="Email" autocomplete ="off" required><span id="errorEmailSub" class="hideError"></span>
+
                 <br>
                 <input id="subPassword" class="subField" type="password" name="password" placeholder="Password" autocomplete="new-password" required><span id="errorPasswordSub" class="hideError"></span>
+                <input id="subConfirmPassword" class="subField" type="password" name="confirmPassword" placeholder="Confirm your password" autocomplete="new-password" required><span id="errorPasswordSub" class="hideError"></span>
+
             <div>
-                <select required name="typeOfAccount">
+                <select required id="typeOfAccount" class="subFieldAccountType" name="typeOfAccount">
                     <option required value="">Type of account</option>
                     <option required value="free">Free</option>
                     <option required value="premium">Premium</option>
@@ -343,7 +345,7 @@ $dataType->execute(array($fullname));
                 </select>
             </div><span id="errorAccountType" class="hideError"></span>
 
-            <button id="subscribeButton" type="submit" name="subscribe">Subscribe here !</button>
+            <button id="subscribeButton" class="subField" type="submit" name="subscribe">Sign up</button>
         </form>
     </div>
 

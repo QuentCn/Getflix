@@ -376,153 +376,435 @@ img{
 
 /* --------------------- STYLE DES FORMULAIRES LOGIN & INSCRIPTION ------------------- */
 
-.containerLogin{
-    position: absolute;
-    top:40%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    width: 440px;
-    height: 300px;
-    background: #1a1a2e;
-    border-radius: 0 10px 10px 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.container-onglets{
-    width: 100%;
-    height: 30%;
-    display: flex;
-   /* border-bottom: 1px solid black;*/
-}
-
-.onglets{
-    width: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    font-weight: 700;
-    cursor: pointer;
-    color: white;
-}
-
-.onglets:not(:nth-child(2)) {
-    border-right: 1px solid #333;
-}
-
-.contenu{
-    height:70%;
-    width: 100%;
-    position: absolute;
-    opacity: 0;
-}
-
-/* -- Animations -- */
-
-.active{
-    background: #cc6d0d;
-    color: #f1f1f1;
-    transition: all 0.3s ease;
-    border-radius: 0 0 10px 0;
-}
-
-.activateContenu{
-    animation: fade 0.5s forwards;
-    display: block;
-}
-
-.desactivateContenu{
-    display: none;
-}
-
-@keyframes fade{
-    from {
+@media (min-width: 750px) {
+    .containerLogin{
+        position: absolute;
+        top:40%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width: 440px;
+        height: 300px;
+        background: #1a1a2e;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .container-onglets{
+        width: 100%;
+        height: 30%;
+        display: flex;
+       /* border-bottom: 1px solid black;*/
+    }
+    
+    .onglets{
+        width: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        font-weight: 700;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .onglets:not(:nth-child(2)) {
+        border-right: 1px solid #333;
+    }
+    
+    .contenu{
+        height:70%;
+        width: 100%;
+        position: absolute;
         opacity: 0;
     }
-    to{
+    
+    /* -- Animations -- */
+    
+    .logTabButton.active{
+        background: #cc6d0d;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+        border-radius: 10px 0 10px 0;
+    }
+    
+    .subTabButton.active{
+        background: #cc6d0d;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+        border-radius: 0 10px 0 10px;
+    }
+    
+    .activateContenu{
+        animation: fade 0.5s forwards;
+        display: block;
+    }
+    
+    .desactivateContenu{
+        display: none;
+    }
+    
+    @keyframes fade{
+        from {
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    
+    .modal {
+        position : fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: 200ms ease-in-out;
+        z-index: 10;
+    }
+    
+    .modal.activer {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    
+    #overlay{
+        position: fixed;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9;
+        pointer-events: none;
+        transition: 200ms ease-in-out;
+    }
+    
+    #overlay.activer{
         opacity: 1;
+        pointer-events: all;
+    } 
+    
+    .close-button{
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        /* border: solid black 1px;
+        border-radius: 50%; */
+        border: none;
+        width: 20px;
+        height: 20px;
+        background: none;
+        font-weight: bold;
+    }
+    
+/* -------------------------- FORM INPUTS STYLE ------------------------------- */
+
+    .logField{
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        top: 40px;
+        background-color: #1a1a2e;
+        border: solid 1px #cc6d0d;
+        border-radius: 5px;
+        width: 220px;
+        height: 30px;
+        color: white;
+        text-indent: 10px;
+    }
+
+    #loginButton{
+        background-color: #cc6d0d;
+    }
+
+    #loginButton:hover{
+        cursor:pointer;
+        transition: all 0.3s ease;
+        background-color: #1a1a2e;
+    }
+
+    .subField{
+        display: inline-block;
+        position: relative;
+        top: 20px;
+        background-color: #1a1a2e;
+        border: solid 1px #cc6d0d;
+        border-radius: 5px;
+        width: 180px;
+        height: 30px;
+        color: white;
+        text-indent: 10px;
+    }
+
+    .subFieldAccountType{
+        display: inline-block;
+        position: relative;
+        top: 20px;
+        background-color: #1a1a2e;
+        border: solid 1px #cc6d0d;
+        border-radius: 5px;
+        width: 180px;
+        height: 30px;
+        color: white;
+        text-indent: 3px;
+    }
+
+    #subscribeButton{
+        background-color: #cc6d0d;
+        left: 25px;
+        top: 70px;
+    }
+
+    #subscribeButton:hover{
+        cursor:pointer;
+        transition: all 0.3s ease;
+        background-color: #1a1a2e;
+    }
+    
+    #subName{
+        left: 25px;
+    }
+
+    #subEmail{
+        position: absolute;
+        right: 25px;
+    }
+
+    #subPassword{
+        left: 25px;
+        top: 35px;
+    }
+
+    #subConfirmPassword{
+        position: absolute;
+        right: 25px;
+        top: 65px;
+    }
+
+    #typeOfAccount{
+        left: 25px;
+        top: 50px;
     }
 }
 
-.modal {
-    position : fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
-    z-index: 10;
-}
-
-.modal.activer {
-    transform: translate(-50%, -50%) scale(1);
-}
 
 
-#overlay{
-    position: fixed;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9;
-    pointer-events: none;
-    transition: 200ms ease-in-out;
-}
-
-#overlay.activer{
-    opacity: 1;
-    pointer-events: all;
-} 
-
-.close-button{
-    position: absolute;
-    right: 3px;
-    top: 3px;
-    /* border: solid black 1px;
-    border-radius: 50%; */
-    border: none;
-    width: 20px;
-    height: 20px;
-    background: none;
-    font-weight: bold;
-}
-
-/* .close-button:hover{
-    background-color: yellow;
-    cursor: pointer;
-} */
 
 
-/* ------------- Erreurs du login / subscribe ------------------ */
+/* ------------------- MODAL LOGIN/SUB RESPONSIVE VERSION MOBILE ------------------- */
 
 
-/* .hideError{
-    display: none;
-} */
 
-/* ---------------- INPUTS STYLE ------------------------------- */
 
-.logField{
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    top: 40px;
-    background-color: #1a1a2e;
-    border: solid 1px #cc6d0d;
-    border-radius: 5px;
-    width: 220px;
-    height: 30px;
-    color: white;
-}
 
-#loginButton{
-    background-color: #cc6d0d;
-}
+@media (max-width: 749px) {
 
-#loginButton:hover{
-    cursor:pointer;
-    transition: all 0.3s ease;
-    background-color: #1a1a2e;
+    .containerLogin{
+        position: absolute;
+        top:40%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width: 310px;
+        height: 350px;
+        background: #1a1a2e;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .container-onglets{
+        width: 100%;
+        height: 30%;
+        display: flex;
+       /* border-bottom: 1px solid black;*/
+    }
+    
+    .onglets{
+        width: 155px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        font-weight: 700;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .onglets:not(:nth-child(2)) {
+        border-right: 1px solid #333;
+    }
+    
+    .contenu{
+        height:70%;
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+    }
+    
+    /* -- Animations -- */
+    
+    .logTabButton.active{
+        background: #cc6d0d;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+        border-radius: 10px 0 10px 0;
+    }
+    
+    .subTabButton.active{
+        background: #cc6d0d;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+        border-radius: 0 10px 0 10px;
+    }
+    
+    .activateContenu{
+        animation: fade 0.5s forwards;
+        display: block;
+    }
+    
+    .desactivateContenu{
+        display: none;
+    }
+    
+    @keyframes fade{
+        from {
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    
+    .modal {
+        position : fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: 200ms ease-in-out;
+        z-index: 10;
+    }
+    
+    .modal.activer {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    
+    #overlay{
+        position: fixed;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9;
+        pointer-events: none;
+        transition: 200ms ease-in-out;
+    }
+    
+    #overlay.activer{
+        opacity: 1;
+        pointer-events: all;
+    } 
+    
+    .close-button{
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        /* border: solid black 1px;
+        border-radius: 50%; */
+        border: none;
+        width: 20px;
+        height: 20px;
+        background: none;
+        font-weight: bold;
+    }
+
+/* ----------------- INPUTS STYLE VERSION MOBILE --------------------  */
+
+    .logField{
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        top: 40px;
+        background-color: #1a1a2e;
+        border: solid 1px #cc6d0d;
+        border-radius: 5px;
+        width: 150px;
+        height: 30px;
+        color: white;
+        text-indent: 10px;
+    }
+
+    #loginButton{
+        background-color: #cc6d0d;
+    }
+
+    #loginButton:hover{
+        cursor:pointer;
+        transition: all 0.3s ease;
+        background-color: #1a1a2e;
+    }
+
+    .subField{
+        display: inline-block;
+        position: relative;
+        top: 20px;
+        background-color: #1a1a2e;
+        border: solid 1px #cc6d0d;
+        border-radius: 5px;
+        width: 130px;
+        height: 30px;
+        color: white;
+        text-indent: 10px;
+    }
+
+    .subFieldAccountType{
+        display: inline-block;
+        position: relative;
+        top: 20px;
+        background-color: #1a1a2e;
+        border: solid 1px #cc6d0d;
+        border-radius: 5px;
+        width: 130px;
+        height: 30px;
+        color: white;
+        text-indent: 3px;
+    }
+
+    #subscribeButton{
+        background-color: #cc6d0d;
+        left: 15px;
+        top: 70px;
+    }
+
+    #subscribeButton:hover{
+        cursor:pointer;
+        transition: all 0.3s ease;
+        background-color: #1a1a2e;
+    }
+
+    #subName{
+        left: 15px;
+    }
+
+    #subEmail{
+        position: absolute;
+        right: 15px;
+    }
+
+    #subPassword{
+        top: 35px;
+        left: 15px;
+    }
+
+    #subConfirmPassword{
+        position: absolute;
+        top: 65px;
+        right: 15px;
+    }
+
+    #typeOfAccount{
+        top: 50px;
+        left: 15px;
+    }
 }
