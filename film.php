@@ -6,9 +6,9 @@ $firstLetterProfile = $_SESSION['fullname'][0];
 $moviesId = $_GET["id"];
 
 if($_SESSION['fullname']){
-  echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['type'] . ' est bien connecté <br />';
+  echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['user_id'] . 'et son type est ' . $_SESSION['type'] . ' est bien connecté <br />';
  };
- 
+  
  $dataform = $db->prepare('SELECT * FROM `users`');
  $dataCom = $db->prepare('SELECT * FROM `comments`');
  
@@ -147,27 +147,17 @@ if($_SESSION['fullname']){
 <!-- ---------------- SECTION COMMENTAIRES -------------- -->
 
 <?php if($_SESSION['type'] == 'admin' OR $_SESSION['type'] == 'premium'){
-echo `
+echo '
+<div id="displayForm">
 <form action="" method="POST">
-    <input type="text" id="comment" name="comment" style="width: 450px; height: 200px">
-    <!-- --------------- PHP PRENDRE L'ID DU FILM POUR LES COMMENTAIRES ----------------------- -->
+    <input type="text" id="comment" name="comment">
     <button type="submit" id="submitComment" name="submit">Envoyer votre commentaire</button>
-    </form>`?>
+    </form>
+    </div>'?>
     <?php
   };
 ?>
-
             <table id="commentSection">
-            <tr>
-                    <!-- <th>Id</th> -->
-                    <th>fullname</th>
-                    <!-- <th>Email</th> -->
-                    <th>Comment</th>
-                    <!-- <th>Movie_id</th> -->
-                    <?php if($_SESSION['type'] =='admin'){echo "<th>Editer</th>
-                    <th>Supprimer</th>";
-                    };?>
-            </tr> 
             <?php //on va afficher ce qu'on veut qui provient de table users
             foreach ($dataFetchCom as $dataFetchCom) {
             if( $moviesId == $dataFetchCom["movie_id"]){?>
@@ -175,11 +165,11 @@ echo `
             <!-- <td><?php// echo $dataFetchCom['user_id']; ?></td> -->
             <td><?php echo $dataFetchCom['fullname']; ?></td>
             <!-- <td><?php// echo $dataFetchCom['email']; ?></td> -->
-            <td><?php echo $dataFetchCom['comment']; ?></td>
+            <td id="commentZone"><?php echo $dataFetchCom['comment']; ?></td>
             <!-- <td><?php// echo $dataFetchCom['movie_id']; ?></td> -->
             <?php if($_SESSION['type'] == 'admin'){echo
-            '<td><a href="commentaires/updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit"><img class="icons" src="asset/img/wrench.png" alt="clé à molette"></img></a></td>
-            <td><a href="commentaires/deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete"><img class="icons" src="asset/img/cross.png" alt="croix"></img></a></td>';
+            '<td><a title="Edit the comment" href="commentaires/updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit"><img class="icons" src="asset/img/wrench.png" alt="clé à molette"></img></a></td>
+            <td><a title="Delete the comment" href="commentaires/deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete"><img class="icons" src="asset/img/cross.png" alt="croix"></img></a></td>';
         };?>
 
             </tr>
