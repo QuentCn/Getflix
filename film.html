@@ -9,15 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
     <link rel="stylesheet" href="asset/css/style.css">
 </head>
-
-
 <body>
 
-<!-- Barre de navigation (quent) -->  
+<!-- Barre de navigation (quent) -->
 
 <nav class="navbar bg-light fixed-top">
     <div class="container-fluid" id="nav">
-      <a class="navbar-brand" id="title" href="testhome.html">Getflix</a>
+      <a class="navbar-brand" id="title" href="home.php">Getflix</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" id="nav-button">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,22 +27,25 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="testhome.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="home.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="account.html">Vos comptes</a>
+              <a class="nav-link" href="">Vos comptes</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Nos films
               </a>
               <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                <li><a class="dropdown-item" href="Niew.html">Dernières Sorties</a></li>
-                <li><a class="dropdown-item" href="Mostviewed.html">Les plus regardés</a></li>
+                <li><a class="dropdown-item" href="pergender.php">Dernières Sorties</a></li>
+                <li><a class="dropdown-item" href="pergender.php">Les plus regardés</a></li>
                 <li>
                 </li>
-                <li><a class="dropdown-item" href="pergender.html">Par Genre</a></li>
+                <li><a class="dropdown-item" href="pergender.php">Par Genre</a></li>
               </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-comp" href="logout.php">Logout</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -55,31 +56,22 @@
       </div>
     </div>
  </nav>
- <!--Fin de la barre de navigation -->
+<!-- Fin de la barre de navigation -->
 
-<div class="container-lg">
-  <div id="tags"></div>
-  <div id="myNav" class="overlay">
-
-      <!-- Pour fermer l'overlay -->
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    
-      <!-- Overlay -->
-      <div class="overlay-content" id="overlay-content"></div>
-      
-      <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8656;</a> 
-      
-      <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow" >&#8658;</a>
-
-    </div>
-  <main id="main"></main>
-  <div class="pagination">
-      <div class="page" id="prev">Previous Page</div>
-      <div class="current" id="current">1</div>
-      <div class="page" id="next">Next Page</div>
-
+<div class="card text-center">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
   </div>
 </div>
+
 <!-- lien js-->
 
 <script src="asset/js/main.js"></script>
