@@ -209,7 +209,7 @@ $dataType->execute(array($fullname));
                         If you decide Getflix isn't for you - no problem. No commitment.
                         Cancel online anytime.
                     </p>
-                    <a href="#" class="btn btn-lg">Watch Free For 30 Days</a>
+                    <!-- <a href="#" class="btn btn-lg">Watch Free For 30 Days</a> -->
                 </div>
                 <img src="./asset/img/landingpage1.png" alt="">
             </div>
@@ -220,7 +220,7 @@ $dataType->execute(array($fullname));
         <div id="tab-2-content" class="tab-content-item">
             <div class="tab-2-content-top">
                 <p class="text-lg">Watch TV shows and movies anytime, anywhere - personalized for you.</p>
-                <a href="#" class="btn btn-lg">Watch Free For 30 Days</a>
+                <!-- <a href="#" class="btn btn-lg">Watch Free For 30 Days</a> -->
             </div>
         
             
@@ -249,7 +249,7 @@ $dataType->execute(array($fullname));
         <div id="tab-3-content" class="tab-content-item">
             <div class="text-center">
                 <p class="text-lg">Choose one plan and watch everything on Getflix</p>
-                <a href="#" class="btn btn-lg">Watch Free For 30 days</a>
+                <!-- <a href="#" class="btn btn-lg">Watch Free For 30 days</a> -->
             </div>
             <table class="table">
                 <thead>
