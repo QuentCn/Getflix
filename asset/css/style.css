@@ -363,13 +363,37 @@ main{
     height:25px;
 }
 
-#commentSection{
+table{
     border-collapse: collapse;
     position: relative;
     top: 75px;
     color: white;
+    background-color: #1a1a2e;
+    border: solid 1px #cc6d0d;
 }
 
 td{
-    border: solid black 1px;
+    border: solid #cc6d0d 1px;
+}
+
+#comment{
+    background-color: #1a1a2e;
+    border: solid 2px #cc6d0d;
+    border-radius: 5px;
+    color: white;
+}
+
+#submitComment{
+    background-color: #1a1a2e;
+    color: white;
+    border: solid 2px #cc6d0d;
+    border-radius: 5px;
+    width: 220px;
+    height: 30px;
+}
+
+#submitComment:hover{
+    transition: all 0.2s ease;
+    background-color: #382e5a;
+    cursor: pointer;
 }
