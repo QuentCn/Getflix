@@ -171,7 +171,7 @@ $dataType->execute(array($fullname));
 <body>
  <header class="showcase">
      <div class="showcase-top">
-        <img src="./asset/img/getflix.png" alt="Getflix">
+        <img src="./asset/img/getflix2.png" alt="Getflix">
 <!-- -------------------------------------- BOUTON SIGN IN --------------------------------------- -->
         <a id="open" class="btn btn-rounded">Sign in</a>
      </div>
