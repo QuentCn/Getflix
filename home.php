@@ -194,10 +194,6 @@ js pas encore fait -->
 
 <?php
 
-if($_SESSION['fullname']){
- echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['user_id'] . 'et son type est' . $_SESSION['type'] . ' est bien connecté <br />';
-};
-
 $dataform = $db->prepare('SELECT * FROM `users`');
 $dataCom = $db->prepare('SELECT * FROM `comments`');
 
