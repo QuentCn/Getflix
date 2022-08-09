@@ -4,6 +4,7 @@ include '../database.php';
 
 
 $getData = $_GET;
+$id = $_GET['movie_id'];
 
   if(!isset($getData['commentID']) && is_numeric($getData['commentID'])){
     echo("Il faut un identifiant de recette afin d'utiliser la fonction éditer !");
@@ -31,6 +32,7 @@ $dataFetchCom = $donnéesFormulaire ->fetch(PDO::FETCH_ASSOC);
       <div style="display:none;">Il manque des informations pour permettre des modifications.
         <label for="id" class="form-label">Identifiant de ligne de formulaire</label>
         <input type="text" class="form-control" id="id" name="commentID" value="<?php echo $dataFetchCom['commentID']; ?>">
+        <input type="text" name="movie_id" value ="<?php echo $id; ?>">
       </div>
     <input type="text" name="comment" style="width: 450px; height: 200px" value="<?php echo $dataFetchCom['comment']; ?>">
     <button type="submit" name="submit">Envoyer votre commentaire</button>

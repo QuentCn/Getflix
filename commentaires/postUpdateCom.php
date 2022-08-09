@@ -5,6 +5,8 @@ include '../database.php';
 
 $postData = $_POST;
 
+$movie_id = $_POST['movie_id'];
+
 if (
     // !isset($postData['user_id'])
      !isset($postData['commentID'])
@@ -30,6 +32,6 @@ $editForm -> execute([
     'commentID' => $commentID
 ]);
 
-header('Location: commente.php')
+ header('Location: ../film.php?id='.$movie_id);
 
 ?>
