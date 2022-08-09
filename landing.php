@@ -171,13 +171,13 @@ $dataType->execute(array($fullname));
 <body>
  <header class="showcase">
      <div class="showcase-top">
-        <img src="./asset/img/getflix2.png" alt="Getflix">
+        <img src="./asset/img/getflix2.png" alt="Logo Getflix">
 <!-- -------------------------------------- BOUTON SIGN IN --------------------------------------- -->
         <a id="open" class="btn btn-rounded">Sign in</a>
      </div>
      <div class="showcase-content">
          <h1>See what's next</h1>
-         <p>Watch anywhere. Cancel anytime</p>
+         <p>Watch anywhere | Cancel anytime</p>
          <a id="watchFree" class="btn btn-xl">
              Watch Free For 30 Days <i class="fas fa-chevron-right btn-icon"></i>
          </a>

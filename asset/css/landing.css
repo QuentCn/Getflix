@@ -134,13 +134,15 @@ img{
 
 .tab-border{
     border-bottom: var(--primary-color) 4px solid;
+    color: #cc6d0d;
 }
 
 /*tab content*/
 .tab-content{
     padding: 3rem 0;
-    background: black;
+    background: #0b0b14;
     color: #fff;
+    border-bottom: 1px solid #3d3d3d;
 }
 
 /*hide content initially*/
@@ -205,8 +207,13 @@ img{
 }
 
 .table tbody tr:nth-child(odd){
-    background: #222;
+    background: #cc6d0d;
 }
+
+.table tbody tr:nth-child(odd) td{
+    color: white;
+}
+
 
 /*footer*/
 .footer {
@@ -828,7 +835,7 @@ img{
     transition: all 0.3s ease;
 }
 
-/* ------------------  ALIGNEMENT DES FOOTERS -------------------------- */
+/* ------------------  ALIGNEMENT & COULEURS DES FOOTERS -------------------------- */
 
 body{
     background-color: #1a1a2e;
@@ -842,3 +849,22 @@ body{
 .footer-cols ul li{
     display: inline-block;
 }
+
+.footer-cols ul li a:hover{
+    color: #cc6d0d;
+}
+
+/* --------------------- COULEURS DES ICONES TABS -------------------------- */
+
+#tab-1:hover{
+    color: #cc6d0d;
+}
+
+#tab-2:hover{
+    color: #cc6d0d;
+}
+
+#tab-3:hover{
+    color: #cc6d0d;
+}
+

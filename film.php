@@ -88,7 +88,7 @@ if($_SESSION['fullname']){
 
 <nav class="navbar bg-light fixed-top">
     <div class="container-fluid" id="nav">
-      <a class="navbar-brand" id="title" href="home.php">Getflix</a>
+      <a class="navbar-brand" id="title" href="home.php"><img class="getflixLogo" src="./asset/img/getflix2.png" alt="Logo Getflix"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" id="nav-button">
         <span class="navbar-toggler-icon"></span>
       </button>
