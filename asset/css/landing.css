@@ -210,7 +210,7 @@ img{
 
 /*footer*/
 .footer {
-    max-width: 75%;
+    max-width: 100%;
     margin: 1rem auto;
     overflow: auto;
 }
@@ -222,11 +222,11 @@ img{
     margin-bottom: 1.5rem;
 }
 
-.footer .footer-cols{
+/* .footer .footer-cols{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
-}
+} */
 
 .footer li {
     line-height:1.9;
@@ -376,12 +376,6 @@ img{
 
 /* --------------------- STYLE DES FORMULAIRES LOGIN & INSCRIPTION ------------------- */
 
-#open:hover{
-    background-color: #1a1a2e;
-    /* border: 1px solid #cc6d0d; */
-    transition: all 0.3s ease;
-}
-
 @media (min-width: 750px) {
     .containerLogin{
         position: absolute;
@@ -394,7 +388,17 @@ img{
         border-radius: 10px 10px 10px 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
+
+    #open{
+        border: 1px solid #cc6d0d;
+    }
     
+    #open:hover{
+        background-color: #1a1a2e;
+        border: 1px solid #cc6d0d; 
+        transition: all 0.3s ease;
+    }
+
     .container-onglets{
         width: 100%;
         height: 30%;
@@ -594,12 +598,7 @@ img{
 }
 
 
-
-
-
 /* ------------------- MODAL LOGIN/SUB RESPONSIVE VERSION MOBILE ------------------- */
-
-
 
 
 
@@ -827,4 +826,19 @@ img{
 #watchFree:hover{
     background-color: #1a1a2e;
     transition: all 0.3s ease;
+}
+
+/* ------------------  ALIGNEMENT DES FOOTERS -------------------------- */
+
+body{
+    background-color: #1a1a2e;
+}
+
+.footer{
+    text-align: center;
+    justify-content: space-between;
+}
+
+.footer-cols ul li{
+    display: inline-block;
 }

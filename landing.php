@@ -212,7 +212,7 @@ $dataType->execute(array($fullname));
                 <div>
                     <p class="text-lg">
                         If you decide Getflix isn't for you - no problem. No commitment.
-                        Cancel online anytime.
+                        Cancel online anytime by contacting us.
                     </p>
                     <!-- <a href="#" class="btn btn-lg">Watch Free For 30 Days</a> -->
                 </div>
@@ -238,7 +238,7 @@ $dataType->execute(array($fullname));
 
                 <div>
                     <img src="./asset/img/landingpage3.png" alt=""/>
-                    <p class="text-md">Watch instantly or download for later</p>
+                    <p class="text-md">Watch instantly</p>
                     <p class="tex-dark">Available on phone and tablet, wherever you go.</p>  
                 </div>
 
@@ -260,56 +260,37 @@ $dataType->execute(array($fullname));
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Basic</th>
-                        <th>Standard</th>
+                        <th>Free</th>
                         <th>Premium</th>
                     </tr>
                 </thead>
                 <tbody>
-                   <td>Monthly price after free month ends on 12/31/2022</td> 
-                   <td>$8.99</td>
-                   <td>$12.99</td>
-                   <td>$15.99</td>
+                   <td>Monthly price</td> 
+                   <td>Free</td>
+                   <td>Free again... yeah, don't ask why...</td>
                    </tr>
                    <tr>
                        <td>HD Available</td>
-                       <td><i class= "fas fa-times"></i></td>
                        <td><i class= "fas fa-check"></i></td>
                        <td><i class= "fas fa-check"></i></td>
-                    </tr>
-                    <tr>
-                       <td>Ultra HD Available</td>
-                       <td><i class= "fas fa-times"></i></td>
-                       <td><i class= "fas fa-times"></i></td>
-                       <td><i class= "fas fa-check"></i></td>
-                    </tr>
-                    <tr>
-                       <td>Screen you can watch on at the same time</td>
-                       <td>1</td>
-                       <td>2</td>
-                       <td>4</td>
                     </tr>
                     <tr>
                        <td>Watch on your laptop, TV, phone and tablet</td>
+                       <td><i class= "fas fa-check"></i></td>
+                       <td><i class= "fas fa-check"></i></td>
+                    </tr>
+                    <tr>
+                       <td>Able to view comments</td>
+                       <td><i class= "fas fa-check"></i></td>
+                       <td><i class= "fas fa-check"></i></td>
+                    </tr>
+                    <tr>
+                       <td>Able to post comments</td>
                        <td><i class= "fas fa-times"></i></td>
-                       <td><i class= "fas fa-check"></i></td>
-                       <td><i class= "fas fa-check"></i></td>
-                    </tr>
-                    <tr>
-                       <td>Unlimited movies and TV shows</td>
-                       <td><i class= "fas fa-check"></i></td>
-                       <td><i class= "fas fa-check"></i></td>
-                       <td><i class= "fas fa-check"></i></td>
-                    </tr>
-                    <tr>
-                       <td>Cancel anytime</td>
-                       <td><i class= "fas fa-check"></i></td>
-                       <td><i class= "fas fa-check"></i></td>
                        <td><i class= "fas fa-check"></i></td>
                     </tr>
                     <tr>
                        <td>First month free</td>
-                       <td><i class= "fas fa-check"></i></td>
                        <td><i class= "fas fa-check"></i></td>
                        <td><i class= "fas fa-check"></i></td>
                     </tr>
@@ -343,7 +324,7 @@ $dataType->execute(array($fullname));
     <div class="contenu contenuSub" data-anim="2">
         <form action="" method="POST" id="subForm">
                 <input id="subName" class="subField" type="text" name="fullname" placeholder="Username" autocomplete="off" required><span id="errorNameSub" class="hideError"></span> 
-                <input id="subEmail" class="subField" type="text" name="email" placeholder="Email" autocomplete ="off" required><span id="errorEmailSub" class="hideError"></span>
+                <input id="subEmail" class="subField" type="email" name="email" placeholder="Email" autocomplete ="off" required><span id="errorEmailSub" class="hideError"></span>
 
                 <br>
                 <input id="subPassword" class="subField" type="password" name="password" placeholder="Password" autocomplete="new-password" required><span id="errorPasswordSub" class="hideError"></span>
@@ -369,34 +350,17 @@ $dataType->execute(array($fullname));
 <!-- ------------------------------------ FOOTER ------------------------------- -->
 
  <footer class="footer">
-     <p>Questions? call 1-866-555-555-555</p>
     <div class="footer-cols">
         <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Investor Relations</a></li>
-            <li><a href="#">Ways To Watch</a></li>
-            <li><a href="#">Corporate Information</a></li>
-            <li><a href="#">Netflix Originals</a></li>
+            <li><a href="#">FAQ</a></li> |
+        <!-- </ul>
+        <ul> -->
+            <li><a href="#">Contact Us</a></li> |
+        <!-- </ul>
+        <ul> -->
+            <li><a href="#">Buy Gift Cards</a></li>        
         </ul>
-        <ul>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Jobs</a></li>
-            <li><a href="#">Ways To Watch</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-        <ul>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Redeem Gift Cards</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Speed Test</a></li>
-        </ul>
-        <ul>
-            <li><a href="#">Media Center</a></li>
-            <li><a href="#">Buy Gift Cards</a></li>
-            <li><a href="#">Cookie Preferences</a></li>
-            <li><a href="#">Legal Notices</a></li>
-        </ul>
+
     </div>
  </footer>
 
