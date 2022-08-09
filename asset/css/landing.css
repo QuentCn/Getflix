@@ -827,7 +827,7 @@ img{
 #watchFree{
     width: 400px;
     font-size: 22px;
-    border: solid 2px #cc6d0d;
+    border: solid 1px #cc6d0d;
 }
 
 #watchFree:hover{
