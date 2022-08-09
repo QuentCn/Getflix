@@ -26,7 +26,7 @@ Pour Getflix, à ce jour, nous avons utilisé :
 - Html  
 - Css  
 - PHP
-- Mysql
+- SQL
 - JavaScript  
 - JQuery
 
