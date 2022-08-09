@@ -4,10 +4,6 @@ include 'database.php';
 $firstLetterProfile = $_SESSION['fullname'][0];
 
 $moviesId = $_GET["id"];
-
-if($_SESSION['fullname']){
-  echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['user_id'] . 'et son type est ' . $_SESSION['type'] . ' est bien connecté <br />';
- };
   
  $dataform = $db->prepare('SELECT * FROM `users`');
  $dataCom = $db->prepare('SELECT * FROM `comments`');
@@ -54,7 +50,7 @@ if($_SESSION['fullname']){
               $dataFetch = $dataform->fetchAll();
               $id = $_POST["user_id"];
           
-              $sqlQuery = 'INSERT INTO `comments`(user_id, fullname, email, comment, movie_id) VALUES (:user_id, :fullname, :email, :comment, :movie_id)';
+              $sqlQuery = 'INSERT INTO `comments`(user_id, fullname, email, comment, movie_id, date) VALUES (:user_id, :fullname, :email, :comment, :movie_id, NOW())';
               
               // Préparation
               $insertData = $db->prepare($sqlQuery);
@@ -167,9 +163,10 @@ echo '
             <!-- <td><?php// echo $dataFetchCom['email']; ?></td> -->
             <td id="commentZone"><?php echo $dataFetchCom['comment']; ?></td>
             <!-- <td><?php// echo $dataFetchCom['movie_id']; ?></td> -->
+            <td><?php echo $dataFetchCom['date']; ?></td>
             <?php if($_SESSION['type'] == 'admin'){echo
-            '<td><a title="Edit the comment" href="commentaires/updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="edit"><img class="icons" src="asset/img/wrench.png" alt="clé à molette"></img></a></td>
-            <td><a title="Delete the comment" href="commentaires/deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'" name="delete"><img class="icons" src="asset/img/cross.png" alt="croix"></img></a></td>';
+            '<td><a title="Edit the comment" href="commentaires/updateCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'&movie_id='; ?><?php echo $moviesId ?><?php echo'" name="edit"><img class="icons" src="asset/img/wrench.png" alt="clé à molette"></img></a></td>
+            <td><a title="Delete the comment" href="commentaires/deleteCom.php?commentID=';?><?php echo $dataFetchCom["commentID"];?><?php echo'&movie_id='; ?><?php echo $moviesId ?><?php echo'" name="delete"><img class="icons" src="asset/img/cross.png" alt="croix"></img></a></td>';
         };?>
 
             </tr>

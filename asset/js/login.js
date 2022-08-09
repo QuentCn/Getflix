@@ -1,8 +1,8 @@
 const onglets = document.querySelectorAll('.onglets');
-
 const contenu = document.querySelectorAll('.contenu');
-
 let index = 0;
+
+// ----------------------- ONGLETS ----------------------
 
 onglets.forEach(onglet => {
     onglet.addEventListener('click', () => {
@@ -71,9 +71,9 @@ function closeModal(modal) {
 
 // ----------------- POP UP WATCH FREE ------------------
 
-const openSignUp = document.getElementById('watchFree');
-const logTabButton = document.querySelector('.logTabButton');
-const subTabButton = document.querySelector('.subTabButton');
+const openSignUp = document.getElementById('watchFree'); // bouton watch for 30 free days
+const logTabButton = document.querySelector('.logTabButton'); // le bouton d'onglet login
+const subTabButton = document.querySelector('.subTabButton'); // le bouton d'onglet sign up
 const contenuLog = document.querySelector('.contenuLog');
 const contenuSub = document.querySelector('.contenuSub');
 
@@ -92,51 +92,39 @@ openSignUp.addEventListener('click', () => {
 
 // ----------------------- INSCRIPTION ERROR --------------------
 
-let checkSubFields = document.getElementById("subscribeButton");
-let inputSubFields = document.querySelectorAll(".subField");
-let checkTypeOfAccount = document.getElementById("typeOfAccount");
-let free = document.getElementById("optionFree");
-let premium = document.getElementById("optionPremium");
-let admin = document.getElementById("optionAdmin");
+let checkSubFields = document.getElementById("subscribeButton"); // bouton de confirmation d'inscription
+let inputSubFields = document.querySelectorAll(".subField"); // les inputs de l'onglet sign up
+let checkTypeOfAccount = document.getElementById("typeOfAccount"); // le selecteur de type de comptes
+let free = document.getElementById("optionFree"); // l'option free du selecteur
+let premium = document.getElementById("optionPremium"); // l'option premium du selecteur
+let admin = document.getElementById("optionAdmin"); // l'option administrateur du selecteur
 
 
-checkSubFields.addEventListener("click", () => {
-    //  if(document.getElementById("subName").value == ""){
-    // document.getElementById("errorNameSub").classList.remove("hideError");
-    //  }
-    //  if(document.getElementById("subName").value.length >= 1){
-    // document.getElementById('errorNameSub').classList.add("hideError");
-    //  }
-     for (var i=0; i < inputSubFields.length; i++){
-        if (inputSubFields[i].value == ""){
+checkSubFields.addEventListener("click", () => { // Evenement déclenché par un clic sur le bouton d'inscription
+     for (var i=0; i < inputSubFields.length; i++){ // vérifie chaque champ de texte
+        if (inputSubFields[i].value == ""){ // si le champ est vide alors les bordures passent en rouge
             inputSubFields[i].style.borderColor ="red";
             // document.querySelectorAll(".hideError")[i].innerHTML="Please,complete the field.";
         }
-        else if (inputSubFields[i].value.length >= 1){
+        else if (inputSubFields[i].value.length >= 1){ // si le champ contient au moins un caractère les bordures passent en vert
             inputSubFields[i].style.borderColor ="green";
             // document.querySelectorAll(".hideError")[i].innerHTML="";
         }
     }
-    // if (checkTypeOfAccount != free.innerHTML || checkTypeOfAccount != premium.innerHTML || checkTypeOfAccount != admin.innerHTML){
-    //     checkTypeOfAccount.style.borderColor = "red";
-    // }
-    // else if (checkTypeOfAccount = free.innerHTML || checkTypeOfAccount == premium.innerHTML || checkTypeOfAccount == admin.innerHTML){
-    //     checkTypeOfAccount.style.borderColor = "green";
-    // }
 });
 
 // --------------- LOGIN ERROR---------------------
 
-let checkLogFields = document.getElementById("loginButton");
-let inputLogFields = document.querySelectorAll(".logField");
+let checkLogFields = document.getElementById("loginButton"); // le bouton login de l'onglet login
+let inputLogFields = document.querySelectorAll(".logField"); // les input de l'onglet login
 
-checkLogFields.addEventListener("click", () => {
-     for (var i=0; i < inputLogFields.length; i++){
-        if (inputLogFields[i].value == ""){
+checkLogFields.addEventListener("click", () => { // Evenement déclenché par un clic sur le bouton de connexion
+     for (var i=0; i < inputLogFields.length; i++){ // vérifie chaque champ de texte
+        if (inputLogFields[i].value == ""){ // si le champ est vide alors les bordures passent en rouge
             inputLogFields[i].style.borderColor ="red";
             // document.querySelectorAll(".errorLog")[i].innerHTML="Please,complete the field.";
         }
-        else if (inputLogFields[i].value.length >= 1){
+        else if (inputLogFields[i].value.length >= 1){ // si le champ contient au moins un caractère les bordures passent en vert
             inputLogFields[i].style.borderColor ="green";
             // document.querySelectorAll(".errorLog")[i].innerHTML="";
         }

@@ -2,21 +2,22 @@
 //On démarre la session et connecte la base de données
 session_start();
 
- try
- { 
-    //----------------- SI NOUVEAU PROBLEME, CHECKER ICI --------------------
-    $options =
-    [
-        PDO::MYSQL_ATTR_INIT_COMMAND =>'SET NAMES utf8',
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_EMULATE_PREPARES => false,
-    ];
+//  try
+//  { 
+//     //----------------- SI NOUVEAU PROBLEME, CHECKER ICI --------------------
+//     $options =
+//     [
+//         PDO::MYSQL_ATTR_INIT_COMMAND =>'SET NAMES utf8',
+//         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+//         PDO::ATTR_EMULATE_PREPARES => false,
+//     ];
 
     $db = new PDO('mysql:host=sql11.freesqldatabase.com;
     dbname=sql11511483;charset=utf8;',
     'sql11511483',
     'wsyzeTJra8',
-    $options);
+    //$options
+);
 
 // ----------------------- CODE PHP POUR LOGIN ------------------------
 // condition de connexion
@@ -25,35 +26,10 @@ if($_SESSION['fullname']){
     header('Location: home.php');
 }
 
-    // ------------- MIS EN COMMENTAIRE CAR CETTE FONCTIONNALITE A ETE AMELIOREE --------
-
-// if(isset($_POST['login'])){
-//     if(empty($_POST["loginName"]) 
-//     OR empty($_POST['loginPassword']))
-//     {
-//     echo"Veuillez remplir tous les champs !";
-//     }}
 
 
+// VERIFICATION DES CONDITIONS DE CONNEXION
 
-
-    // ------------- MIS EN COMMENTAIRE CAR CETTE FONCTIONNALITE A ETE AMELIOREE --------
-// se connecter à l'espace d'administration
-// if (isset($_POST['login'])){
-//     if(!empty($_POST["loginName"]) AND !empty($_POST['loginPassword'])){
-//         $pseudo = "admin";
-//         $password = "123";
-
-//         $pseudoWrote = htmlspecialchars($_POST['loginName']);
-//         $passwordWrote = htmlspecialchars($_POST['loginPassword']);
-//         if($pseudoWrote == $pseudo AND $passwordWrote == $password){
-//             $_SESSION['administrateur'] = $password;
-//             header('Location: administration/admin.php');
-//          } 
-//      };
-// }
-// fin de la connexion à l'espace admin
-// ------------------------------------------------------------------------------------------
 
 // Connexion du membre 
 //On traduit le cryptage
@@ -88,17 +64,53 @@ $dataType->execute(array($fullname));
             }        
     }}
 
+
+
+
 // ----------------------------- CODE PHP POUR INSCRIPTION ----------------------- 
 
+//VERIFICATION DES CONDITIONS D'INSCRIPTION
+
     if(isset($_POST['subscribe'])){
+
+        $subUsername = $_POST['fullname'];
+        $subPassword = $_POST['password'];
+        $subConfPass = $_POST['confirmPassword'];
+        $subEmail = $_POST['email'];
+        $subAccount = $_POST['typeOfAccount'];
+
+        // ----------- TEST DE MESSAGES D'ERREUR EN PHP ---------------
         if(empty($_POST["fullname"]) 
         OR empty($_POST['password']) 
         OR empty($_POST["email"])
         OR empty($_POST["typeOfAccount"])
         OR empty($_POST['confirmPassword'])){
-            
-        echo"Veuillez remplir tous les champs !";
-        }}
+        header("Location: landing.php?error=emptyfields&uid=".$subUsername."&mail=".$subEmail);
+        exit();
+        }
+        else if(!filter_var($subEmail, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/")){
+            header("Location: landing.php?error=invaliduid");
+            exit();
+        }
+        else if(!filter_var($subEmail, FILTER_VALIDATE_EMAIL)){
+            header("Location: landing.php?error=invalidmail&uid=".$subUsername);
+            exit();
+        }
+        else if(!preg_match("/^[a-zA-Z0-9]*$/")){
+            header("Location: landing.php?error=invaliduid&uid=".$subEmail);
+            exit();
+        }
+        else if($subPassword !== $subConfPass){
+            header("Location: landing.php?error=passwordcheck&uid=".$subUsername."&mail=".$subEmail);
+            exit();  
+        }
+        // PAS FINI, MIS EN COMMENTAIRE PAR MANQUE DE TEMPS 
+        // else{
+
+        //     $checkIfExist = $db -> prepare('SELECT fullname FROM users WHERE users=?');
+        //     $checkIfExist -> execute();
+        //     if(!)
+        // };
 
     if(isset($_POST['subscribe'])){
         if($_POST['password'] != $_POST['confirmPassword']){
@@ -151,9 +163,9 @@ $dataType->execute(array($fullname));
             }}}
         }
 
-        catch(PDOException $pe){
-            echo 'ERREUR : '.$pe->getMessage();
-         }
+        // catch(PDOException $pe){
+        //     echo 'ERREUR : '.$pe->getMessage();
+        //  }
         ?>
 
 <!-- ------------------------------  HTML  --------------------------------- -->

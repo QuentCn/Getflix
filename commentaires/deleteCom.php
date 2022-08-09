@@ -1,8 +1,8 @@
 <?php //Je connecte mes pages au serveur
     include '../database.php';
 
-
-          header('Location: home.php')?>
+    $movie_id = $_GET['movie_id'];
+     header('Location: ../film.php?id='.$movie_id)?>
 
 <?php //On va selectionner le tout ("*") dans le table users
 $donnéesFormulaire = $db->prepare('SELECT * FROM comments WHERE commentID');?>
