@@ -424,10 +424,6 @@ img{
         color: white;
     }
     
-    .onglets:not(:nth-child(2)) {
-        border-right: 1px solid #333;
-    }
-    
     .contenu{
         height:70%;
         width: 100%;
@@ -641,10 +637,6 @@ img{
         color: white;
     }
     
-    .onglets:not(:nth-child(2)) {
-        border-right: 1px solid #333;
-    }
-    
     .contenu{
         height:70%;
         width: 100%;
@@ -852,6 +844,7 @@ body{
 
 .footer-cols ul li a:hover{
     color: #cc6d0d;
+    cursor: pointer;
 }
 
 /* --------------------- COULEURS DES ICONES TABS -------------------------- */
@@ -868,3 +861,231 @@ body{
     color: #cc6d0d;
 }
 
+/* --------------------- MODAL FAQ -------------------------------- */
+
+    .containerFaq{
+        position: absolute;
+        top:40%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width: 440px;
+        height: 300px;
+        background: #1a1a2e;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .container-onglets-faq{
+        width: 100%;
+        height: 30%;
+        display: flex;
+       /* border-bottom: 1px solid black;*/
+    }
+    
+    .ongletsFaq{
+        width: 110px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        font-weight: 700;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .contenuFaq{
+        height:70%;
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+    }
+    
+    /* -- Animations -- */
+    
+    .contactTabButton.active{
+        background: #cc6d0d;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+        border-radius: 0 0 10px 10px;
+    }
+    
+    .faqTabButton.active{
+        background: #cc6d0d;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+        border-radius: 10px 0 10px 0;
+    }
+    
+    .giftTabButton.active{
+        background: #cc6d0d;
+        color: #f1f1f1;
+        transition: all 0.3s ease;
+        border-radius: 0 10px 0 10px;
+    }
+
+    .activateContenuFaq{
+        animation: fade 0.5s forwards;
+        display: block;
+    }
+    
+    .desactivateContenuFaq{
+        display: none;
+    }
+    
+    @keyframes fade{
+        from {
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    
+    .modalFaq {
+        position : fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: 200ms ease-in-out;
+        z-index: 10;
+    }
+    
+    .modalFaq.activer {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    
+    #overlayFaq{
+        position: fixed;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9;
+        pointer-events: none;
+        transition: 200ms ease-in-out;
+    }
+    
+    #overlayFaq.activer{
+        opacity: 1;
+        pointer-events: all;
+    } 
+    
+    .close-button-faq{
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        /* border: solid black 1px;
+        border-radius: 50%; */
+        border: none;
+        width: 20px;
+        height: 20px;
+        background: none;
+        font-weight: bold;
+    }
+
+
+    /* ------------------ FAQ STYLE ----------------------- */
+
+    .faq-heading{
+        border-bottom: #777;
+        padding: 20px 60px;
+    }
+    .faq-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    }
+    .hr-line{
+      width: 60%;
+      margin: auto;
+    }
+
+    .faq-page {
+        color: #444;
+        cursor: pointer;
+        padding: 0 20px;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+        margin: auto;
+        font-size: 20px;
+        width: 60%;
+    }
+    .faq-body{
+        margin: auto;
+       width: 50%; 
+       padding: auto;       
+    }
+
+    .active,
+    .faq-page:hover {
+        background-color: #cc6d0d;
+        width: 65%;
+    }
+
+    .faq-body {
+        padding: 0 18px;
+        /* background-color: white; */
+        display: none;
+        overflow: hidden;
+    }
+
+    .faq-page:after {
+        content: '\02795'; /*Code pour le signe "+" */
+        font-size: 13px;
+        color: white;
+        float: right;
+        margin-left: 5px;
+    }
+
+    #contactInput{
+        width: 400px;
+        height: 125px;
+    }
+
+    #problems{
+        position: absolute;
+        left: 20px;
+        top: 5px;
+    }
+
+    #contactEmail{
+        position: absolute;
+        right : 20px;
+        top: 5px;
+    }
+
+    #sendButton{
+        background-color: #cc6d0d;
+        top: 25px;
+    }
+
+    #sendButton:hover{
+        cursor:pointer;
+        transition: all 0.3s ease;
+        background-color: #1a1a2e;
+    }
+
+    #bigButtonGiftCard{
+        height: 100px;
+        width: 300px;
+        border: solid 1px #cc6d0d;
+        border-radius: 10px;
+        background-color: #cc6d0d;
+        color: white;
+    }
+
+    #bigButtonGiftCard p{
+        position: relative;
+        top: 25px;
+        font-weight: bold;
+    }
+
+    #bigButtonGiftCard:hover{
+        background-color: #1a1a2e;
+        transition: all 0.7s ease;
+        cursor: pointer;
+    }

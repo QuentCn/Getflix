@@ -4,6 +4,7 @@ include 'database.php';
 $firstLetterProfile = $_SESSION['fullname'][0];
 
 $moviesId = $_GET["id"];
+$url = "Location: film.php?";
   
  $dataform = $db->prepare('SELECT * FROM `users`');
  $dataCom = $db->prepare('SELECT * FROM `comments`');
@@ -31,6 +32,7 @@ $moviesId = $_GET["id"];
   if(isset($_POST['submit'])){
        if(isset($_POST['submit'])){
           if(!empty($_POST["comment"])) {
+
               $user_id = $_SESSION["user_id"];
               $fullname = htmlspecialchars($_SESSION["fullname"]); //htmlspecialchars permet d'empêcher un utilisateur malveillant d'envoyer du code via l'input
               $email = htmlspecialchars($_SESSION["email"]);
@@ -62,8 +64,8 @@ $moviesId = $_GET["id"];
                   'email' => $email,
                   'comment' => $comment,
                   'movie_id' => $movie_id,
-              ]);
-    }}};
+              ]); echo "<meta http-equiv='refresh' content='0'>";
+    }}}; 
                   
 ?>
 

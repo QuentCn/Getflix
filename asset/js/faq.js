@@ -34,7 +34,7 @@ onglets.forEach(onglet => {
 
 // ----------------- POP UP SIGN-IN ------------------
 
-const openSignIn = document.getElementById('open');
+const openSignIn = document.getElementById('openFaq');
 const closeSignIn = document.querySelector('.close-button');
 const overlay = document.getElementById('overlay');
 const openPanel = document.querySelector('.modal');
@@ -130,99 +130,3 @@ checkLogFields.addEventListener("click", () => { // Evenement déclenché par un
         }
     }
 });
-
-// --------------- MODAL FOOTER ---------------------
-
-const faqTabButton = document.querySelector('.faqTabButton'); // le bouton d'onglet login
-const contactTabButton = document.querySelector('.contactTabButton'); // le bouton d'onglet sign up
-const giftTabButton = document.querySelector('.giftTabButton'); // le bouton d'onglet sign up
-const contenuFaq = document.querySelector('.contenuFaq');
-const contenuGift = document.querySelector('.contenuGift');
-const contenuContact = document.querySelector('.contenuContact');
-
-// ---------- GIFT -----------
-const openGift = document.getElementById('openGift');
-
-openGift.addEventListener('click', () => {
-    openFaqModal();
-    contactTabButton.classList.remove("active");
-    faqTabButton.classList.remove("active");
-    giftTabButton.classList.add("active");
-    
-    contenuGift.classList.add('activateContenu');
-    contenuFaq.classList.add('desactivateContenu');
-    contenuContact.classList.add('desactivateContenu');
-
-    contenuGift.classList.remove('desactivateContenu');
-    contenuFaq.classList.remove('activateContenu');
-    contenuContact.classList.remove('activateContenu');
-});
-
-// -------- CONTACT US ----------
-const openContactUs = document.getElementById('openContact');
-
-openContactUs.addEventListener('click', () => {
-    openFaqModal();
-    contactTabButton.classList.add("active");
-    faqTabButton.classList.remove("active");
-    giftTabButton.classList.remove("active");
-    
-    contenuContact.classList.add('activateContenu');
-    contenuFaq.classList.add('desactivateContenu');
-    contenuGift.classList.add('desactivateContenu');
-
-    contenuContact.classList.remove('desactivateContenu');
-    contenuFaq.classList.remove('activateContenu');
-    contenuGift.classList.remove('activateContenu');
-});
-
-// ---------- FAQ ------------
-
-const openFaq = document.getElementById('openFaq');
-const overlayFaq = document.getElementById('overlayFaq');
-const openPanelFaq = document.querySelector('.modalFaq');
-
-openFaq.addEventListener('click', () => {
-    openFaqModal();
-    contactTabButton.classList.remove("active");
-    faqTabButton.classList.add("active");
-    giftTabButton.classList.remove("active");
-    
-    contenuFaq.classList.add('activateContenu');
-    contenuContact.classList.add('desactivateContenu');
-    contenuGift.classList.add('desactivateContenu');
-
-    contenuFaq.classList.remove('desactivateContenu');
-    contenuContact.classList.remove('activateContenu');
-    contenuGift.classList.remove('activateContenu');
-});
-
-overlayFaq.addEventListener('click', () => {
-const modals = document.querySelectorAll('.modalFaq.activer');
-    closeFaqModal()
-});
-
-function openFaqModal(){
-    return openPanelFaq.classList.add('activer'), overlayFaq.classList.add('activer');
-}; 
-
-function closeFaqModal(modal) {
-    return openPanelFaq.classList.remove('activer'), overlayFaq.classList.remove('activer');
-};
-
-// -------------- FAQ DEROULEMENT QUESTION/REPONSE -----------------
-
-var faq = document.getElementsByClassName("faq-page");
-var i;
-for (i = 0; i < faq.length; i++) {
-    faq[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var body = this.nextElementSibling;
-
-        if (body.style.display === "block") {
-            body.style.display = "none";
-        } else {
-            body.style.display = "block";
-        }
-    });
-}

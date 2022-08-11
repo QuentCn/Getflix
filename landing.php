@@ -364,13 +364,85 @@ $dataType->execute(array($fullname));
  <footer class="footer">
     <div class="footer-cols">
         <ul>
-            <li><a href="#">FAQ</a></li> |
+            <li><a id="openFaq">FAQ</a></li> |
+            
+            <div class="modalFaq" id="modal">
+    <div class="containerLogin">
+        <div class="container-onglets">
+        <button data-close-button class="close-button"></button>
+            <div class="onglets faqTabButton" data-anim="1">FAQ</div>
+            <div class="onglets contactTabButton" data-anim="2">Contact us</div>
+            <div class="onglets giftTabButton" data-anim="3">Buy Gift Card</div>
+        </div>
+            <!-- -------- FAQ -------- -->
+        <div class="contenu contenuFaq" data-anim="1">
+            <h4>Welcome to the FAQ !</h4>
+
+            <section class="faq-container">
+            <div class="faq-one">
+                <!-- faq question -->
+                <h6 class="faq-page">What can I watch on Getflix ?</h1>
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>You can watch trailer movie !</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-two">
+                <!-- faq question -->
+                <h6 class="faq-page">How many cost Getflix by month ?</h1>
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>It's free !</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-three">
+                <!-- faq question -->
+                <h6 class="faq-page">Can I watch Getflix on my phone ?</h1>
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>Yes we can !</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+        <!-- --------- Formulaire de contact -------- -->
+    <div class="contenu contenuContact" data-anim="2">
+        <form action="" method="POST" id="subForm">
+                <input id="contactEmail" class="subField" type="email" name="email" placeholder="Your email" autocomplete ="off" required>
+                <br>
+                <input class="subField" id="contactInput" type="text" placeholder="Write to us...">
+            <div>
+                <select required id="problems" class="subFieldAccountType" name="typeOfProblem">
+                    <option required value="">What problem do you have ?</option>
+                    <option required value="access">I can't access to the movies !</option>
+                    <option required value="whyFree">Why this site is completly free ?</option>
+                    <option required value="other">Other</option>
+                </select>
+            </div>
+            <button id="sendButton" class="subField" type="submit" name="subscribe">Send</button>
+        </form>
+    </div>
+            <!-- --------- BUY A GIFT CARD ! -------- -->
+            <div class="contenu contenuGift" data-anim="3">
+                <p>Click on this button to have a GETFLIX GIFT CARD !</p>
+                <a id="bigButtonGiftCard" class="btn btn-rounded"><p>LOOK AT THIS BIG BUTTON !</p></a>
+            </div>
+
+</div>
+</div>
+<div id="overlayFaq"></div>
+
+
+
         <!-- </ul>
         <ul> -->
-            <li><a href="#">Contact Us</a></li> |
+            <li><a id="openContact">Contact Us</a></li> |
         <!-- </ul>
         <ul> -->
-            <li><a href="#">Buy Gift Cards</a></li>        
+            <li><a id="openGift">Buy Gift Cards</a></li>        
         </ul>
 
     </div>
