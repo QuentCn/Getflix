@@ -96,10 +96,6 @@ $dataType->execute(array($fullname));
             header("Location: landing.php?error=invalidmail&uid=".$subUsername);
             exit();
         }
-        else if(!preg_match("/^[a-zA-Z0-9]*$/")){
-            header("Location: landing.php?error=invaliduid&uid=".$subEmail);
-            exit();
-        }
         else if($subPassword !== $subConfPass){
             header("Location: landing.php?error=passwordcheck&uid=".$subUsername."&mail=".$subEmail);
             exit();  
