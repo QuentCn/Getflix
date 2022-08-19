@@ -65,8 +65,6 @@ $dataType->execute(array($fullname));
     }}
 
 
-
-
 // ----------------------------- CODE PHP POUR INSCRIPTION ----------------------- 
 
 //VERIFICATION DES CONDITIONS D'INSCRIPTION
@@ -224,7 +222,7 @@ $dataType->execute(array($fullname));
                     </p>
                     <!-- <a href="#" class="btn btn-lg">Watch Free For 30 Days</a> -->
                 </div>
-                <img src="./asset/img/landingpage1.png" alt="">
+                <img src="./asset/img/resilier2.png" id="resilier" alt="">
             </div>
         </div>
 
@@ -239,12 +237,12 @@ $dataType->execute(array($fullname));
             
             <div class="tab-2-content-bottom">
                 <div>
-                    <img src="./asset/img/landingpage2.png" alt=""/>
-                    <p class="text-md">Watch on your TV</p>
-                    <p class="text-dark">Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray, PlayStation and more.</p>  
+                    <img src="./asset/img/movies2.png" alt=""/>
+                    <p class="text-md">Watch instantly</p>
+                    <p class="text-dark">Available on phone, tablet and computer.</p>  
                 </div>
 
-                <div>
+                <!-- <div>
                     <img src="./asset/img/landingpage3.png" alt=""/>
                     <p class="text-md">Watch instantly</p>
                     <p class="tex-dark">Available on phone and tablet, wherever you go.</p>  
@@ -254,7 +252,7 @@ $dataType->execute(array($fullname));
                     <img src="./asset/img/landingpage4.png" alt=""/>
                     <p class="text-md">Use any computer</p>
                     <p class="tex-dark">Watch right on getflix.com</p>  
-                </div>
+                </div> -->
             </div>
         </div>
 
