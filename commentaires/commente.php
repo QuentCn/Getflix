@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-include '../database.php';
+include 'database.php';
 
-if($_SESSION['fullname']){
- echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['type'] . ' est bien connecté <br />';
-};
+// if($_SESSION['fullname']){
+//  echo $_SESSION['fullname'] . ' son email est ' . $_SESSION['email'] . ' son id est ' . $_SESSION['type'] . ' est bien connecté <br />';
+// };
 
 $dataform = $db->prepare('SELECT * FROM `users`');
 $dataCom = $db->prepare('SELECT * FROM `comments`');
@@ -77,7 +77,7 @@ $commentID = $dataComId->fetch()['commentID'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="commentStyle.css">
+    <link rel="stylesheet" href="commentaires/commentStyle.css">
     <title>Tests commentaires</title>
 </head>
 <body>
@@ -85,7 +85,7 @@ $commentID = $dataComId->fetch()['commentID'];
     <form action="" method="POST">
     <input type="text" id="comment" name="comment" style="width: 450px; height: 200px">
     <!-- --------------- PHP PRENDRE L'ID DU FILM POUR LES COMMENTAIRES ----------------------- -->
-    <input type="text" name="movie_id" id="moviesId" style="visibility:hidden">
+    <input type="text" name="movie_id" id="moviesId" value=$moviesId >
     <button type="submit" id="submitComment" name="submit">Envoyer votre commentaire</button>
     </form>
 

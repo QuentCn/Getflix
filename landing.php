@@ -26,8 +26,6 @@ if($_SESSION['fullname']){
     header('Location: home.php');
 }
 
-
-
 // VERIFICATION DES CONDITIONS DE CONNEXION
 
 
@@ -63,7 +61,6 @@ $dataType->execute(array($fullname));
                 echo "Votre pseudo ou mot de passe est incorrect. ";
             }        
     }}
-
 
 // ----------------------------- CODE PHP POUR INSCRIPTION ----------------------- 
 

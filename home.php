@@ -25,7 +25,7 @@ $firstLetterProfile = $_SESSION['fullname'][0];
 <!-- Barre de navigation (quent)--> 
 
 <nav class="navbar">
-  <div class="title">Getflix</div>
+  <div class="title"><a href="home.php"><img class="getflixLogo" src="./asset/img/getflix2.png" alt="Logo Getflix"></a></div>
   <a href="#" class="toggle-button">
     <span class="bar"></span>
     <span class="bar"></span>
@@ -33,9 +33,9 @@ $firstLetterProfile = $_SESSION['fullname'][0];
   </a>
   <div class="navbar-links">
     <ul>
-      <li><a href="testhome.html">Home</a></li>
-      <li><a href="pergender.html">Films</a></li>
-      <li><a href="">Contact</a></li>
+      <li><a href="home.php">Home</a></li>
+      <li><a href="pergender.php">Films</a></li>
+      <li><a href="logout.php">Logout</a></li>
     </ul>
   </div>
 </nav>

@@ -148,7 +148,7 @@ function showMovies(data) {
                 ${overview}
                 <br/> 
                 <form action="film.php" method="GET" id="${id}">
-                <a href="film.html?id=${id}" class="btn btn-primary">More Info</a>
+                <a href="film.php?id=${id}" class="btn btn-primary">More Info</a>
             </div>
         `;
         main.appendChild(movieEl);
