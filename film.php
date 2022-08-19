@@ -78,68 +78,44 @@ $url = "Location: film.php?";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
-    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/film.css">
+    <link rel="stylesheet" href="asset/css/navbar.css">
 </head>
 <body>
-
-<!-- Barre de navigation (quent) -->
-
-<nav class="navbar bg-light fixed-top">
-    <div class="container-fluid" id="nav">
-      <a class="navbar-brand" id="title" href="home.php"><img class="getflixLogo" src="./asset/img/getflix2.png" alt="Logo Getflix"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" id="nav-button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"> Getflix</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Vos comptes</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Nos films
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                <li><a class="dropdown-item" href="pergender.php">Dernières Sorties</a></li>
-                <li><a class="dropdown-item" href="pergender.php">Les plus regardés</a></li>
-                <li>
-                </li>
-                <li><a class="dropdown-item" href="pergender.php">Par Genre</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="nav-comp" href="logout.php">Logout</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Rechercher</button>
-          </form>
-        </div>
-      </div>
-    </div>
- </nav>
-<!-- Fin de la barre de navigation -->
-
-<div class="card text-center">
-  <div class="card-header">
-    Featured
+ <!--Navigation bar-->
+ <nav class="navbar">
+  <div class="title">Getflix</div>
+  <a href="#" class="toggle-button">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+  <div class="navbar-links">
+    <ul>
+      <li><a href="testhome.html">Home</a></li>
+      <li><a href="pergender.html">Films</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
   </div>
-  <div class="card-body">
-    <h5 class="card-title" id="">Special title treatment</h5>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+</nav>
+<!--end of Navigation bar-->
+<br>
+
+
+<!-- page du film -->
+
+<div class="movie-info">
+  <div class="movie-detail">
+      <h1 class="movie-name"></h1>
+      <p class="genres"></p>
+      <p class="des"></p>
+      <p class="starring"><span>Starring:</span></p>
   </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
+</div>>
+
+<!-- video clips -->
+<div class="trailer-container">
+    <h1 class="heading">Trailer</h1>
 </div>
 
 <!-- ---------------- SECTION COMMENTAIRES -------------- -->
@@ -185,8 +161,10 @@ echo '
 
 <!-- lien js-->
 
+<!-- lien js-->
+<script src="asset/js/film.js"></script>
+<script src="asset/js/navbar.js"></script>
 
-<script src="asset/js/main.js"></script>
 
  </body>
 </html>
