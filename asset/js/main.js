@@ -199,9 +199,6 @@ function showMovies(data) {
     })
 }
 
-
-
-
 const overlayContent = document.getElementById('overlay-content');
 
 /* Ouvrir les "span" */
