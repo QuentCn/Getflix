@@ -32,7 +32,7 @@ Pour Getflix, à ce jour, nous avons utilisé :
 
 ## Aperçu du projet
 
-Coming soon !
+Vous pouvez accéder au projet via ce lien = https://streamiflix.herokuapp.com/landing.php
 
 ## Organisation
 
